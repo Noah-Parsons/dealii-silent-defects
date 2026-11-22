@@ -1,0 +1,390 @@
+{
+ "15577": {
+  "fix_date": "2023-07-02",
+  "files": [
+   "source/numerics/solution_transfer.cc"
+  ],
+  "n_blamed_commits": 1,
+  "min_age_y": 24.3,
+  "median_age_y": 24.3,
+  "max_age_y": 24.3
+ },
+ "16161": {
+  "fix_date": "2023-10-20",
+  "files": [
+   "include/deal.II/dofs/dof_tools.h",
+   "include/deal.II/multigrid/mg_constrained_dofs.h",
+   "source/dofs/dof_tools_constraints.cc"
+  ],
+  "n_blamed_commits": 31,
+  "min_age_y": 0.0,
+  "median_age_y": 5.2,
+  "max_age_y": 13.6
+ },
+ "16164": {
+  "fix_date": "2023-10-20",
+  "files": [
+   "source/grid/tria.cc"
+  ],
+  "n_blamed_commits": 2,
+  "min_age_y": 3.0,
+  "median_age_y": 5.1,
+  "max_age_y": 7.1
+ },
+ "16252": {
+  "fix_date": "2023-11-22",
+  "files": [
+   "include/deal.II/matrix_free/matrix_free.h"
+  ],
+  "n_blamed_commits": 1,
+  "min_age_y": 3.0,
+  "median_age_y": 3.0,
+  "max_age_y": 3.0
+ },
+ "16694": {
+  "fix_date": "2024-02-28",
+  "files": [
+   "source/grid/grid_generator.cc"
+  ],
+  "n_blamed_commits": 7,
+  "min_age_y": 0.0,
+  "median_age_y": 0.0,
+  "max_age_y": 0.0
+ },
+ "17096": {
+  "fix_date": "2024-06-11",
+  "files": [
+   "source/sundials/arkode.cc",
+   "source/sundials/ida.cc"
+  ],
+  "n_blamed_commits": 2,
+  "min_age_y": 4.1,
+  "median_age_y": 5.5,
+  "max_age_y": 6.8
+ },
+ "17345": {
+  "fix_date": "2024-07-22",
+  "files": [
+   "source/distributed/tria.cc"
+  ],
+  "n_blamed_commits": 13,
+  "min_age_y": 0.3,
+  "median_age_y": 6.2,
+  "max_age_y": 8.3
+ },
+ "17415": {
+  "fix_date": "2024-08-06",
+  "files": [
+   "source/lac/petsc_vector_base.cc"
+  ],
+  "n_blamed_commits": 6,
+  "min_age_y": 6.2,
+  "median_age_y": 6.2,
+  "max_age_y": 6.2
+ },
+ "17428": {
+  "fix_date": "2024-08-04",
+  "files": [
+   "include/deal.II/matrix_free/tools.h"
+  ],
+  "n_blamed_commits": 13,
+  "min_age_y": 0.2,
+  "median_age_y": 2.4,
+  "max_age_y": 4.6
+ },
+ "17626": {
+  "fix_date": "2024-09-03",
+  "files": [
+   "include/deal.II/lac/affine_constraints.h",
+   "include/deal.II/lac/affine_constraints.templates.h"
+  ],
+  "n_blamed_commits": 31,
+  "min_age_y": 0.0,
+  "median_age_y": 1.5,
+  "max_age_y": 3.2
+ },
+ "17755": {
+  "fix_date": "2025-01-24",
+  "files": [
+   "include/deal.II/fe/fe_nedelec.h",
+   "source/fe/fe_nedelec.cc",
+   "source/fe/fe_poly_tensor.cc"
+  ],
+  "n_blamed_commits": 17,
+  "min_age_y": 0.0,
+  "median_age_y": 4.1,
+  "max_age_y": 11.6
+ },
+ "17905": {
+  "fix_date": "2024-12-04",
+  "files": [
+   "include/deal.II/matrix_free/evaluation_kernels.h"
+  ],
+  "n_blamed_commits": 1,
+  "min_age_y": 1.2,
+  "median_age_y": 1.2,
+  "max_age_y": 1.2
+ },
+ "18390": {
+  "fix_date": "2025-05-08",
+  "files": [
+   "include/deal.II/fe/fe_tools.h",
+   "include/deal.II/fe/fe_tools_extrapolate.templates.h"
+  ],
+  "n_blamed_commits": 21,
+  "min_age_y": 3.3,
+  "median_age_y": 8.1,
+  "max_age_y": 8.7
+ },
+ "18437": {
+  "fix_date": "2025-05-08",
+  "files": [
+   "source/base/parameter_handler.cc"
+  ],
+  "n_blamed_commits": 8,
+  "min_age_y": 1.2,
+  "median_age_y": 5.3,
+  "max_age_y": 5.3
+ },
+ "18568": {
+  "fix_date": "2025-06-20",
+  "files": [
+   "source/grid/grid_generator.cc"
+  ],
+  "n_blamed_commits": 33,
+  "min_age_y": 1.4,
+  "median_age_y": 10.2,
+  "max_age_y": 11.9
+ },
+ "18574": {
+  "fix_date": "2025-06-23",
+  "files": [
+   "source/grid/grid_generator.cc"
+  ],
+  "n_blamed_commits": 13,
+  "min_age_y": 2.0,
+  "median_age_y": 7.1,
+  "max_age_y": 10.1
+ },
+ "18668": {
+  "fix_date": "2025-07-11",
+  "files": [
+   "source/lac/petsc_matrix_base.cc"
+  ],
+  "n_blamed_commits": 1,
+  "min_age_y": 12.4,
+  "median_age_y": 12.4,
+  "max_age_y": 12.4
+ },
+ "18830": {
+  "fix_date": "2025-08-19",
+  "files": [
+   "source/base/polynomials_vector_anisotropic.cc"
+  ],
+  "n_blamed_commits": 5,
+  "min_age_y": 0.4,
+  "median_age_y": 0.4,
+  "max_age_y": 0.4
+ },
+ "19069": {
+  "fix_date": "2025-12-15",
+  "files": [
+   "include/deal.II/matrix_free/constraint_info.h",
+   "include/deal.II/multigrid/mg_transfer_matrix_free.templates.h"
+  ],
+  "n_blamed_commits": 7,
+  "min_age_y": 0.3,
+  "median_age_y": 2.0,
+  "max_age_y": 3.8
+ },
+ "19294": {
+  "fix_date": "2026-02-15",
+  "files": [
+   "include/deal.II/non_matching/mapping_info.h"
+  ],
+  "n_blamed_commits": 9,
+  "min_age_y": 2.5,
+  "median_age_y": 2.5,
+  "max_age_y": 2.9
+ },
+ "19329": {
+  "fix_date": "2026-05-05",
+  "files": [
+   "source/lac/petsc_solver.cc"
+  ],
+  "n_blamed_commits": 2,
+  "min_age_y": 3.0,
+  "median_age_y": 12.5,
+  "max_age_y": 21.9
+ },
+ "19421": {
+  "fix_date": "2026-03-20",
+  "files": [
+   "include/deal.II/fe/mapping_fe.h",
+   "include/deal.II/fe/mapping_q.h",
+   "source/fe/mapping_fe.cc",
+   "source/fe/mapping_q.cc"
+  ],
+  "n_blamed_commits": 28,
+  "min_age_y": 2.0,
+  "median_age_y": 4.7,
+  "max_age_y": 5.7
+ },
+ "19596": {
+  "fix_date": "2026-04-30",
+  "files": [
+   "source/grid/grid_generator.cc"
+  ],
+  "n_blamed_commits": 7,
+  "min_age_y": 7.9,
+  "median_age_y": 7.9,
+  "max_age_y": 10.8
+ },
+ "19710": {
+  "fix_date": "2026-05-20",
+  "files": [
+   "include/deal.II/multigrid/multigrid.h",
+   "include/deal.II/multigrid/multigrid.templates.h"
+  ],
+  "n_blamed_commits": 7,
+  "min_age_y": 8.0,
+  "median_age_y": 8.0,
+  "max_age_y": 9.0
+ },
+ "19919": {
+  "fix_date": "2026-06-24",
+  "files": [
+   "include/deal.II/base/utilities.h",
+   "source/dofs/dof_tools.cc"
+  ],
+  "n_blamed_commits": 4,
+  "min_age_y": 0.1,
+  "median_age_y": 8.0,
+  "max_age_y": 9.3
+ },
+ "20037": {
+  "fix_date": "2026-08-20",
+  "files": [
+   "source/grid/tria.cc"
+  ],
+  "n_blamed_commits": 20,
+  "min_age_y": 0.6,
+  "median_age_y": 8.2,
+  "max_age_y": 15.8
+ },
+ "20252": {
+  "fix_date": "2026-10-02",
+  "files": [
+   "source/distributed/tria_base.cc"
+  ],
+  "n_blamed_commits": 4,
+  "min_age_y": 3.6,
+  "median_age_y": 5.7,
+  "max_age_y": 5.7
+ },
+ "20263": {
+  "fix_date": "2026-10-10",
+  "files": [
+   "include/deal.II/matrix_free/matrix_free.h"
+  ],
+  "n_blamed_commits": 2,
+  "min_age_y": 3.6,
+  "median_age_y": 5.6,
+  "max_age_y": 7.6
+ },
+ "20299": {
+  "fix_date": "2026-10-20",
+  "files": [
+   "source/fe/fe_nedelec.cc"
+  ],
+  "n_blamed_commits": 13,
+  "min_age_y": 8.4,
+  "median_age_y": 8.4,
+  "max_age_y": 9.6
+ },
+ "20312": {
+  "fix_date": "2026-10-27",
+  "files": [
+   "include/deal.II/lac/petsc_solver.h",
+   "source/lac/petsc_solver.cc"
+  ],
+  "n_blamed_commits": 45,
+  "min_age_y": 3.4,
+  "median_age_y": 8.3,
+  "max_age_y": 14.2
+ },
+ "20352": {
+  "fix_date": "2026-11-05",
+  "files": [
+   "include/deal.II/multigrid/mg_transfer_matrix_free.templates.h"
+  ],
+  "n_blamed_commits": 4,
+  "min_age_y": 1.2,
+  "median_age_y": 1.2,
+  "max_age_y": 1.2
+ },
+ "20369": {
+  "fix_date": "2026-11-20",
+  "files": [
+   "source/grid/manifold_lib.cc"
+  ],
+  "n_blamed_commits": 2,
+  "min_age_y": 6.5,
+  "median_age_y": 7.7,
+  "max_age_y": 8.9
+ },
+ "20391": {
+  "fix_date": "2026-11-20",
+  "files": [
+   "include/deal.II/matrix_free/fe_evaluation.h"
+  ],
+  "n_blamed_commits": 3,
+  "min_age_y": 1.0,
+  "median_age_y": 1.0,
+  "max_age_y": 1.0
+ },
+ "20393": {
+  "fix_date": "2026-11-21",
+  "files": [
+   "include/deal.II/matrix_free/fe_evaluation.h"
+  ],
+  "n_blamed_commits": 15,
+  "min_age_y": 1.7,
+  "median_age_y": 2.7,
+  "max_age_y": 7.4
+ },
+ "18001": {
+  "fix_date": "2025-01-28",
+  "files": [
+   "source/particles/particle_handler.cc"
+  ],
+  "n_blamed_commits": 5,
+  "min_age_y": 0.9,
+  "median_age_y": 0.9,
+  "max_age_y": 3.2
+ },
+ "20359": {
+  "fix_date": "2026-11-06",
+  "files": [
+   "include/deal.II/distributed/shared_tria.h",
+   "source/distributed/shared_tria.cc",
+   "source/grid/grid_tools_dof_handlers.cc"
+  ],
+  "n_blamed_commits": 14,
+  "min_age_y": 0.3,
+  "median_age_y": 9.6,
+  "max_age_y": 11.1
+ },
+ "20045": {
+  "fix_date": "2026-07-21",
+  "files": [
+   "include/deal.II/grid/tria_description.h",
+   "source/grid/tria.cc",
+   "source/grid/tria_description.cc"
+  ],
+  "n_blamed_commits": 9,
+  "min_age_y": 2.6,
+  "median_age_y": 6.6,
+  "max_age_y": 6.6
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "n_prs": 3752,
+ "first_date": "21 June 2023",
+ "last_date": "22 November 2026",
+ "n_changelog": 497,
+ "n_candidates": 446,
+ "test": {
+  "stored_wrong": 5,
+  "none": 5,
+  "passed_both": 1,
+  "extended": 2,
+  "new": 15,
+  "stored_changed": 7
+ },
+ "cause": {
+  "never_worked": 3,
+  "check_not_run": 1,
+  "state_overwritten": 1,
+  "formula": 2,
+  "semantics": 3,
+  "parallel_only": 6,
+  "corner_case": 14,
+  "stale_state": 3,
+  "scale_threshold": 2
+ },
+ "median_age": 5.7,
+ "n_over5": 22,
+ "n_aged": 33
+}

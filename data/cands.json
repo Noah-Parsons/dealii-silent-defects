@@ -1,0 +1,4016 @@
+[
+{
+"pr": 15401,
+"date": "2023-07-04",
+"title": "[Post-9.5] Address some cppcheck findings",
+"commits": "Fix tests | Fix more tests | Fix quicktests | Use a reference to a const value in one place | Mark some constructors as explicit",
+"cl": "",
+"newtests": 0,
+"nsrc": 30
+},
+{
+"pr": 15402,
+"date": "2023-06-28",
+"title": "Optimize IndexSet::add_indices() for the case of duplicate indices.",
+"commits": "Add a changelog entry. | Add a test. | Optimize IndexSet::add_indices() for the case of duplicate indices.",
+"cl": "Fixed: The function IndexSet::add_indices() was not efficient when adding sets of indices that are sorted but contain duplicates. This is now fixed. (Wolfgang Bangerth, 2023/06/20) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15405,
+"date": "2023-06-21",
+"title": "Fix some more tests without hypre and with C++20",
+"commits": "Fix ambiguity for TrilinosWrappers::Iterators comparison operators using C++20 | Restrict some tests requiring hypre",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15423,
+"date": "2023-06-22",
+"title": "Fix a few more 'set up'",
+"commits": "Fix a few more 'set up'",
+"cl": "",
+"newtests": 0,
+"nsrc": 6
+},
+{
+"pr": 15430,
+"date": "2023-06-22",
+"title": "Fix bug in MatrixFree setup for FE_Nothing",
+"commits": "Fix bug in MatrixFree setup for FE_Nothing",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15431,
+"date": "2023-06-22",
+"title": "Fix bug in AffineConstraints::make_sorted_row_list",
+"commits": "Fix bug in AffineConstraints::make_sorted_row_list",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15434,
+"date": "2023-06-23",
+"title": "Examples 9.5",
+"commits": "Fix compilation with complex PETSc + SUNDIALS. | Fix a 'bind to temporary' warning. | Tweak some example documentation.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15451,
+"date": "2023-06-23",
+"title": "Fix invalid memory access of DoFAccessorImplementation",
+"commits": "Fix invalid memory access of DoFAccessorImplementation",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15452,
+"date": "2023-06-23",
+"title": "Fix invalid data access in MatrixFreeTools::compute_diagonal",
+"commits": "Fix invalid data access in MatrixFreeTools::compute_diagonal",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15474,
+"date": "2023-06-25",
+"title": "Fixes for FPE and older versions of PETSc",
+"commits": "Disable FPE trapping in some tests with older versions of PETSc | Fix warning | alternative outputs for MACOSX | Some versions of PETSc do not apply Shift if zero!",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 15492,
+"date": "2023-06-26",
+"title": "Ensure we set a flag correctly even if a task ends in an exception.",
+"commits": "Add a changelog entry. | Ensure we set a flag correctly even if a task ends in an exception.",
+"cl": "Fixed: With some compilers, calling Threads::Task::Task() with a function object that ends with an exception lead to a segmentation fault. This is now fixed. (Wolfgang Bangerth, 2023/06/26) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15517,
+"date": "2023-06-29",
+"title": "Fix MGTwoLevelTransfer when used without MPI",
+"commits": "Add changelog | Two new test cases | Fix the two-level transfer without MPI | Move job_supports_mpi() to a more central place",
+"cl": "Fixed: MGTwoLevelTransfer used within the global coarsening multigrid framework did not work when deal.II was compiled without MPI or when MPI_Init was not called. This is now fixed. (Martin Kronbichler, 2023/06/28) ",
+"newtests": 2,
+"nsrc": 12
+},
+{
+"pr": 15527,
+"date": "2023-07-04",
+"title": "FEFaceEvaluation: Fix ECL for continuous elements",
+"commits": "Fix ECL in read_write_operation_contiguous",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15535,
+"date": "2023-06-30",
+"title": "Avoid one potential quadratic complexity case in IndexSet::add_ranges",
+"commits": "Changelog | Test case that would previously run in quadratic complexity | Avoid quadratic complexity in IndexSet::add_ranges",
+"cl": "Fixed: IndexSet::add_index() would not recognize single indices already added, leading to an unnecessary quadratic complexity in case the same entry is added many times. This is now fixed. (Martin Kronbichler, 2023/06/30) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15538,
+"date": "2023-07-14",
+"title": "",
+"commits": "Allow ArborX to be used also when spacedim==1 | Fix CI | Forward declarations for ArborXWrappers | Use old version if spacedim==1 | Use ArborX only when global_bboxes.size()==1 | Avoid undefined reference when spacedim==1 | Unify 2D and 3D implementations | Use structured binding | Use ifdef | Choos",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15542,
+"date": "2023-07-03",
+"title": "Do not allow access to return value of tasks that ended in exceptions.",
+"commits": "Add a changelog entry. | Add a test. | Do not allow access to return value of tasks that ended in exceptions.",
+"cl": "Fixed: It was previously possible to access the return value of a Threads::Task object if the underlying task had ended with an exception. But that return value was not initialized. This is now checked: You can no longer call Threads::Task::return_value() after an exception. (Wolfgang Bangerth, 2023/06/30) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15552,
+"date": "2023-07-02",
+"title": "",
+"commits": "Fix the header comments of the new two tests | Revert modification | Fix missing indent | remove useless comments + indent | Indent | Clean test | Finalize test output | Update test | Try with p::f::T | Add failing test",
+"cl": "",
+"newtests": 2,
+"nsrc": 2
+},
+{
+"pr": 15572,
+"date": "2024-04-09",
+"title": "Add InitFinalize base class of MPI_InitFinalize",
+"commits": "Fix comment and add a test | Add changelog entry | Add InitFinalize base class of MPI_InitFinalize to initialize/finalize deal.II and other exteranl properties",
+"cl": "New: Added InitFinalize class. This class is similar to MPI_InitFinalize but it allows users to decide which libraries should be initialized/finalized by the class. (Bruno Turcksin, 2023/07/13) ",
+"newtests": 1,
+"nsrc": 5
+},
+{
+"pr": 15577,
+"date": "2023-07-02",
+"title": "",
+"commits": "Add changelog entry. | Add test. | Fix SolutionTransfer to properly compress() vectors.",
+"cl": "Fixed: The SolutionTransfer class writes into output vectors, but does not call compress() on them. This is of no consequence for deal.II vectors for which this class is mostly used (in contrast to the parallel::distributed::SolutionTransfer class), but leads to awkward downstream failures with, for example, PETSc vectors. This is now fixed. (Wolfgang Bangerth, 2023/07/01) ",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 15582,
+"date": "2023-07-02",
+"title": "",
+"commits": "Fix the naming of some function arguments.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 15584,
+"date": "2023-07-02",
+"title": "Fix missing template argument.",
+"commits": "Fix extract_subvector_to for Tpetra | Fix missing template argument.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15585,
+"date": "2023-07-02",
+"title": "",
+"commits": "Fix the naming of some function arguments.",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 15588,
+"date": "2023-07-02",
+"title": "Fix the step-36 tests.",
+"commits": "Fix the step-36 tests.",
+"cl": "Changed: The overloads of KellyErrorEstimator::estimate() which compute multiple vector error estimates at once now require that vectors be passed in ArrayView objects of pointers to ReadVector instead of std::vector objects of pointers to VectorType objects. (David Wells, 2023/07/02) ",
+"newtests": 0,
+"nsrc": 5
+},
+{
+"pr": 15600,
+"date": "2023-07-03",
+"title": "lac/scalapack.cc: fix an out-of-bounds write that leads to a double free",
+"commits": "add a news/changes entry | lac/scalapack.cc: fix an out-of-bounds write that leads to a double free",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15614,
+"date": "2023-07-03",
+"title": "Fix range-based for loops over the cells of triangulations.",
+"commits": "Fix range-based for loops over the cells of triangulations.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15615,
+"date": "2023-07-04",
+"title": "Move the save and load function to serial tria",
+"commits": "Fix documentation | Suppress warning in p::s::T | Move the save and load function to serial tria",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 15619,
+"date": "2023-07-03",
+"title": "Fix missing include file for optimization/line_minimization.h",
+"commits": "Fix missing include file for optimization/line_minimization.h",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15627,
+"date": "2023-07-03",
+"title": "Fix the name of a variable.",
+"commits": "Fix the name of a variable.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15660,
+"date": "2023-07-05",
+"title": "Fix some comparisons operator for g++-13 with C++20",
+"commits": "Fix some comparisons operator for g++-13 with C++20",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15671,
+"date": "2023-07-07",
+"title": "Avoid const return type in functions",
+"commits": "Fix tests | Avoid const return type",
+"cl": "",
+"newtests": 0,
+"nsrc": 25
+},
+{
+"pr": 15678,
+"date": "2023-07-07",
+"title": "Fix face orientation",
+"commits": "Fix face orientation",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15683,
+"date": "2023-07-12",
+"title": "Make sure get_fe_by_name works for simplices.",
+"commits": "Make sure get_fe_by_name works for simplices.",
+"cl": "Fixed: FETools::get_fe_by_name() now works also for simplex finite elements. (Luca Heltai, 2023/07/08) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15688,
+"date": "2023-07-10",
+"title": "",
+"commits": "Make input arguments 'const'. | Add a changelog entry. | Remove class VectorSpaceVector. | Fix a misplaced forward declaration.",
+"cl": "Removed: Some, but not all, of the vector classes were derived from a base class VectorSpaceVector. This class had been intended to provide an abstract interface (via `virtual` functions) to vector-vector operations such as dot products or norms. But it turns out that that is not practical in many cases: Functions still need to either have access to individual elements of the vector, or they need to be able to do matrix-vector products. As a consequence, it is rarely useful to only have a reference to the base class VectorSpaceVector: One actually needs a reference to the derived class. Because of this lack of use, we have removed the VectorSpaceVector base class from the library. (Wolfgang ",
+"newtests": 0,
+"nsrc": 8
+},
+{
+"pr": 15697,
+"date": "2023-07-10",
+"title": "",
+"commits": "fix indent by check_indentation.sh | remove some incorrect subtitle numbers | Additional incorrect doxygen-style brackets | Fix incorrect and missing doxygen-style name brackets",
+"cl": "",
+"newtests": 0,
+"nsrc": 7
+},
+{
+"pr": 15731,
+"date": "2023-07-15",
+"title": "Use \"empty()\" instead of \"size() == 0\"",
+"commits": "Sanitize parameter_handler_25 output | Fix more output files for parameter_handler_25 | Fix tests | Fix some more | Use \"empty()\" instead of \"size() == 0\"",
+"cl": "",
+"newtests": 0,
+"nsrc": 98
+},
+{
+"pr": 15748,
+"date": "2023-07-16",
+"title": "Manually fix up some std::is_same<...> places.",
+"commits": "Manually fix up some std::is_same<...> places.",
+"cl": "",
+"newtests": 0,
+"nsrc": 19
+},
+{
+"pr": 15785,
+"date": "2023-08-05",
+"title": "PETScWrappers::TimeStepper support resizing while solving",
+"commits": "PETScWrappers::TimeStepper: use empty function when not knowing how to deal with the exception | PETScWrappers::TimeStepper: make setup_xxx calls private | implement Wolfgang's comments | PETScWrappers::TimeStepper: add missing tests for callbacks | PETScWrappers::TimeStepper: cannot change the poin",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 15801,
+"date": "2023-08-06",
+"title": "Make GridGenerator::hyper_cube_with_cylindrical_hole<2>() more robust.",
+"commits": "Avoid some uses of GeometryInfo. | Avoid a compiler warning in a test. | Make sure we don't match points on the perimeter of the domain as 'inside'. | Fix a warning in a test. | Make GridGenerator::hyper_cube_with_cylindrical_hole<2>() more robust.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15806,
+"date": "2023-08-10",
+"title": "",
+"commits": "Fix spelling and add changelog | Introduce NodeVisitor",
+"cl": "New: Added a function extract_children_of_level() that returns the bounding boxes associated to the children of a given level of an Rtree and stores them in a vector. (Marco Feder, 2023/08/10) ",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 15865,
+"date": "2023-09-06",
+"title": "reset ghost state in MG_transfer_global_coarsening interpolate",
+"commits": "Update doc/news/changes/minor/20230904Schussnig | reset ghost state in MG transfer global coarsening interpolate",
+"cl": "Fixed: MGTwoLevelTransferBase now preserves the ghost state of the source vector in all call scenarios. (Richard Schussnig, Martin Kronbichler, Peter Munch, 2023/09/04) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15874,
+"date": "2023-08-14",
+"title": "Fix bug in AffineConstraints::shift",
+"commits": "Make sure the size of the index set is updated. | Uncover bug in AffineConstraints::shift",
+"cl": "",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 15888,
+"date": "2023-08-17",
+"title": "Fix cuda_tensor_product_kernels.h",
+"commits": "Fix cuda_tensor_product_kernels.h",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15909,
+"date": "2023-08-22",
+"title": "Standardize on 'const X' instead of 'X const', part II",
+"commits": "Fix two garbled up comments | Standardize on 'const X' instead of 'X const', part II",
+"cl": "",
+"newtests": 0,
+"nsrc": 13
+},
+{
+"pr": 15912,
+"date": "2023-08-22",
+"title": "Fix for https://github.com/dealii/dealii/issues/15882",
+"commits": "proper fix for algebraic constraints",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15920,
+"date": "2023-10-31",
+"title": "Add a new feature for 2nd order symmetric tensor split",
+"commits": "Fix the parameters in doxygen | Address the comments provided in the code review | add an entry in changelog | new feature to split a 2nd-order symmetric tensor into a positive part and a negative part",
+"cl": "New: Add two tensor functions for the split of a 2nd-order symmetric tensor into a positive part and a negative part based on the signs of the eigenvalues obtained from the spectrum decomposition. The function positive_negative_split() performs the positive-negative split of the 2nd-order symmetric tensor given as the input. The function positive_negative_projectors() not only performs the split, but also provides the derivatives (two fourth-order tensors) of the positive/negative part of the tensor with respect to the input tensor. (Tao Jin, 2023/08/22) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15938,
+"date": "2023-08-28",
+"title": "",
+"commits": "Fix assert",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 15951,
+"date": "2023-09-12",
+"title": "Matrix-free evaluation of Raviart-Thomas: major restructuring",
+"commits": "Extend comments and clarify variable names | Changelog | Fix review comments | Make performance test compile | Silence compile warning | Implement face evaluation for Raviart-Thomas | Simplify normal evaluation for Raviart-Thomas | Delete obsolete code | FEEvaluation: Restructure layout of gradients",
+"cl": "Changed: The class FEEvaluation now uses a different internal data layout for the gradients, exposed via FEEvaluation::begin_gradients(). Now, the entries of the partial derivatives in the space directions are placed adjacent in memory. The entries of different components are still separated by the entries on all points. This change has been made to simplify the access in the FEEvaluation::get_gradient() and FEEvaluation::submit_gradient() functions, which is especially useful for the case with many FE components. For the regular use of FEEvaluation apart from the plain pointers mentioned above, there is no change in behavior. (Martin Kronbichler, 2023/09/11) ",
+"newtests": 0,
+"nsrc": 5
+},
+{
+"pr": 15963,
+"date": "2023-09-07",
+"title": "FE_PolyTensor: Only request dof_sign_change if necessary",
+"commits": "Changelog | New test case | FEPolyTensor: Only request dof_sign_change if necessary",
+"cl": "Fixed: FEValues requesting only mapping information but initialized with elements derived from FE_PolyTensor would previously run into an assertion on unstructured 2d meshes. This is now fixed. (Martin Kronbichler, 2023/09/07) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 15977,
+"date": "2023-09-10",
+"title": "Fix address boundary error in FEInterfaceValues::get_update_flags()",
+"commits": "Fix address boundary error in FEInterfaceValues::get_update_flags()",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16005,
+"date": "2023-10-11",
+"title": "Fix Tpetra 64 bit global ordinate errors",
+"commits": "Fix Tpetra 64-it global ordnate errors",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16010,
+"date": "2023-09-20",
+"title": "Assert that AffineConstraints got index sets when running in parallel.",
+"commits": "Assert that AffineConstraints got index sets when running in parallel. | Fix tests.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16011,
+"date": "2023-09-20",
+"title": "Fix TrilinosWrappers::PreconditionBase special member functions",
+"commits": "Fix TrilinosWrappers::PreconditionBase special member functions",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16037,
+"date": "2023-09-25",
+"title": "Fix Assert* not ending with a semicolon",
+"commits": "Fix cases where we can't currently use a semicolon without additional braces | Assert* should end with a semicolon",
+"cl": "",
+"newtests": 0,
+"nsrc": 22
+},
+{
+"pr": 16039,
+"date": "2023-09-24",
+"title": "",
+"commits": "add test | fix AffineConstraints::copy_from",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16041,
+"date": "2023-09-24",
+"title": "Fix AffineConstraints copy constructor.",
+"commits": "Add a test. | Fix AffineConstraints copy constructor.",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16053,
+"date": "2023-09-28",
+"title": "Add an assertion.",
+"commits": "Add an assertion. | Fix a bug where we were choosing the wrong index set.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16054,
+"date": "2023-09-28",
+"title": "",
+"commits": "Matrix-free kernels: Try to fix Cuda warning",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16080,
+"date": "2023-10-03",
+"title": "Fix NoncontiguousPartitioner::import_from_ghosted_array()",
+"commits": "Fix NoncontiguousPartitioner::import_from_ghosted_array()",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16090,
+"date": "2023-10-04",
+"title": "FEPointEvaluation: Fix check in debug mode",
+"commits": "Fix check",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16093,
+"date": "2023-10-05",
+"title": "Fix a bug in AffineConstraints::clear().",
+"commits": "Fix a bug in AffineConstraints::clear().",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16101,
+"date": "2023-10-05",
+"title": "Fix swapped error messages.",
+"commits": "Fix swapped error messages.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16115,
+"date": "2023-10-10",
+"title": "Restrict checking ArrayView validity to debug mode.",
+"commits": "Restrict checking ArrayView validity to debug mode.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16119,
+"date": "2023-10-11",
+"title": "Fix ReferenceCell::standard_vs_true_line_orientation() for simplices",
+"commits": "Fix ReferenceCell::standard_vs_true_line_orientation() for simplices",
+"cl": "Fixed: The querying of line orientations in the case of tetrahedra has been fixed. (Peter Munch, David Wells, 2023/10/10) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 16137,
+"date": "2023-10-16",
+"title": "FEPointEvaluation: Fix integrate linear for face path",
+"commits": "Test linear face path 3d | Fix integrate linear for face path",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16139,
+"date": "2023-10-14",
+"title": "Fix compute_prefix_sum() for serial run",
+"commits": "Fix compute_prefix_sum() for serial run",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16161,
+"date": "2023-10-20",
+"title": "Fix PBC in MGConstrainedDoFs",
+"commits": "Update comment | Fix PBC in MGConstrainedDoFs",
+"cl": "Fixed: There was an inconsistency between the way DoFTools::make_periodicity_constraints() and MGConstrainedDoFs set up the constraints for periodic constraints. This is fixed now. (Peter Munch, Laura Prieto Saavedra, 2023/10/19) ",
+"newtests": 1,
+"nsrc": 4
+},
+{
+"pr": 16164,
+"date": "2023-10-20",
+"title": "Copy periodic faces when copying triangulation",
+"commits": "Update loop | Copy periodic faces when using copy_triangulation",
+"cl": "Fixed: The periodic faces information was not being copied when using the `Triangulation::copy_triangulation()` function. This is now fixed. (Laura Prieto Saavedra, Peter Munch, 2023/10/19)",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16200,
+"date": "2023-10-31",
+"title": "Periodic cleanup 1",
+"commits": "Clean up get_combined_orientation() in 1D. | Fix a #include | Remove bit manipulations from a test. | Remove the now-unused lookup table. | Compute orientations with ReferenceCell and a translation table. | Use std::optional in orthogonal_equality(). | Remove an unused function.",
+"cl": "",
+"newtests": 0,
+"nsrc": 5
+},
+{
+"pr": 16205,
+"date": "2023-10-27",
+"title": "Fix the assert condition in trilinos_tpetra_vector.templates.h",
+"commits": "Fix the assert condition",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16207,
+"date": "2023-10-27",
+"title": "Fix trilinos_tpetra_vector.h vector access",
+"commits": "Fix trilinos_tpetra_vector.h",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16224,
+"date": "2023-10-31",
+"title": "Fix use of flags in CUDAWrappers::MatrixFree",
+"commits": "Fix use of flags in CUDAWrappers::MatrixFree",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16225,
+"date": "2023-11-02",
+"title": "",
+"commits": "Add a changelog entry. | Add a test. | Make sure we declare the correct classes as 'friend'.",
+"cl": "Fixed: It was not possible to compare non-const iterators into block sparse matrices because a `friend` declaration referred to the wrong class. This is now fixed. (Wolfgang Bangerth, Simon Wiesheier, 2023/10/31) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16252,
+"date": "2023-11-22",
+"title": "Fix `active_fe_index` query to consider cell categorization",
+"commits": "Add changelog entry for 'active_fe_index' fix | Use correct number of blank lines in parallel test output | Indentation using clang-format-16 | Use first dof_handler in MF get_active_fe_index | Extend compute_diagonal_01 test description | Update test output of compute_diagonal_01 for cell categoriz",
+"cl": "Fixed: MatrixFree::get_cell_active_fe_index did not return the correct value when used with categorization of cells. This affects also MFTools::compute_diagonal(). This is now fixed. (David Schneider, 2023/11/13) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16253,
+"date": "2023-11-08",
+"title": "",
+"commits": "Fix clang-tidy-17 complains",
+"cl": "",
+"newtests": 0,
+"nsrc": 11
+},
+{
+"pr": 16259,
+"date": "2023-11-11",
+"title": "",
+"commits": "Erronius VectorTools::NormType::* has been replaced with VectorTools::* in all files. Primarily, this fixes the clickability in doxygen for the two grid_refinement.h files.",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 16284,
+"date": "2023-11-22",
+"title": "",
+"commits": "fix TpetraWrappers::Vector<Number>",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16287,
+"date": "2023-11-23",
+"title": "Fix vertex orientations in torus mesh",
+"commits": "Changelog | New test case | Fix vertex orientations in torus mesh",
+"cl": "Fixed: Meshes created with GridGenerator::torus() would previously run into an assertion in p4est when using parallel::distributed::Triangulation. This is now fixed. (Martin Kronbichler, Mathias Anselmann, Peter Munch, 2023/11/22) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16295,
+"date": "2023-11-28",
+"title": "",
+"commits": "Add a test. | Better document Lazy<T> and fix move semantics.",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16319,
+"date": "2023-12-04",
+"title": "fix a few comments in GridTools implementation",
+"commits": "fix a few comments in GridTools implementation",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16329,
+"date": "2023-12-28",
+"title": "NOXSolver: add a test demonstrating the issue with pending_exception",
+"commits": "Add changelog entry | Fix documentation | Add recovery logic | Add tests",
+"cl": "Fixed: Exceptions of type RecoverableUserCallbackError, raised in callbacks `solve_with_jacobian` and `solve_with_jacobian_and_track_n_linear_iterations` of the TrilinosWrappers::NOXSolver class, are now treated as \"recoverable\", if the NOX parameter \"Newton/Rescue Bad Newton Solve\" is set to `true`, which is, in fact, its default value. Exceptions of all other types and also all exceptions raised in other callbacks are still treated as \"irrecoverable\". (Vladimir Ivannikov, 2023/12/26) ",
+"newtests": 2,
+"nsrc": 2
+},
+{
+"pr": 16340,
+"date": "2023-12-12",
+"title": "MatrixFree::reinit: Fix case with MPI and threading",
+"commits": "MatrixFree::reinit: Fix case with MPI and threading",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16352,
+"date": "2023-12-15",
+"title": "",
+"commits": "Correct a condition.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16359,
+"date": "2024-01-26",
+"title": "Introduce FEFacePointEvaluation with optimized FCL path",
+"commits": "Force inlining in release mode | Address review comments | Add dim component test and fix strides | add test | FCL path",
+"cl": "",
+"newtests": 3,
+"nsrc": 7
+},
+{
+"pr": 16398,
+"date": "2024-01-01",
+"title": "Deal with IndexSet operations in a more efficient way.",
+"commits": "Fix another place. | Deal with IndexSet operations in a more efficient way.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16415,
+"date": "2024-01-15",
+"title": "Fix ecl access cells",
+"commits": "Fix ecl cells",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16416,
+"date": "2024-01-06",
+"title": "Fix allocation in TrilinosWrappers::SparseMatrix::AccessorBase",
+"commits": "Fix allocation in TrilinosWrappers::SparseMatrix::AccessorBase",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16420,
+"date": "2024-01-06",
+"title": "Fix TrilinosWrappers::SparsityPattern::Accessor::visit_present_row()",
+"commits": "Fix TrilinosWrappers::SparsityPattern::Accessor::visit_present_row()",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16421,
+"date": "2024-01-06",
+"title": "Fix variable name.",
+"commits": "Fix variable name.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16441,
+"date": "2024-01-16",
+"title": "Use Utilities::fixed_power() where possible.",
+"commits": "Use std::hypot() instead of std::sqrt(sum of squares). | Use Utilities::fixed_power() where possible.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16451,
+"date": "2024-01-12",
+"title": "Fix the type of an array.",
+"commits": "Fix the type of an array.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16456,
+"date": "2024-01-11",
+"title": "Fix constraint_info.h for g++-13 on MacOS X",
+"commits": "Fix constraint_info.h for g++-13 on MacOS X",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16466,
+"date": "2024-01-13",
+"title": "Fix a trilinos array type.",
+"commits": "Fix a trilinos array type.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16489,
+"date": "2024-01-21",
+"title": "fix bug in function DoFCellAccessor::distribute_local_to_global()",
+"commits": "change the test output | modify the test codes to meet the format requirements | fix bug in function DoFCellAccessor::distribute_local_to_global() and add a test",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16506,
+"date": "2024-01-20",
+"title": "Fix type in Tensor initialization.",
+"commits": "Fix type in Tensor initialization.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16519,
+"date": "2024-01-22",
+"title": "Tensor<k, dim, Number::unroll(): fix copy statement",
+"commits": "Tensor<k, dim, Number::unroll(): fix copy statement",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16524,
+"date": "2024-01-24",
+"title": "Fix type confusion in Tensor initialization.",
+"commits": "Add a test. | Fix type confusion in Tensor initialization.",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16529,
+"date": "2024-01-24",
+"title": "Fix TpetraWrappers::Vector::operator=(double)",
+"commits": "Fix TpetraWrappers::Vector::operator=(double)",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16530,
+"date": "2024-01-24",
+"title": "Fix docu of `p::d::SolutionTransfer::interpolate()` for the use with multiple functions",
+"commits": "fix/improve docu of p::d::SolutionTransfer::interpolate for multiple functions",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16532,
+"date": "2024-02-05",
+"title": "Fix performance quadrature generator",
+"commits": "Use Lazy | Fix performance quadrature generator",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16545,
+"date": "2024-01-27",
+"title": "Fix Copy Constructor in TpetraWrappers::Vector.",
+"commits": "Fix Copy Constructor in TpetraWrappers::Vector.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16572,
+"date": "2024-01-31",
+"title": "Convert a few more places of Assert(false, dealii::ExcNotImplemented());",
+"commits": "Convert a few more places of Assert(false, dealii::ExcNotImplemented()); | Qualify ExcNotImplemented with the correct namespace.",
+"cl": "",
+"newtests": 0,
+"nsrc": 6
+},
+{
+"pr": 16574,
+"date": "2024-01-31",
+"title": "Fix assert in import_elements from ReadWriteVector",
+"commits": "Fix assert in import_elements from ReadWriteVector",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16597,
+"date": "2024-02-05",
+"title": "Tpetra: fix lac/vector_reinit_02",
+"commits": "Tpetra: fix lac/vector_reinit_02",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16615,
+"date": "2024-02-09",
+"title": "FlexibleIndexStorage: fix memory allocation",
+"commits": "FlexibleIndexStorage: fix memory allocation",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16619,
+"date": "2024-02-12",
+"title": "FEFaceEvaluation + DG + hp: fix quadrature indexing",
+"commits": "FEEvaluation + DG + hp: fix quadrature indexing",
+"cl": "Fixed: Fix initialization of FEFaceEvaluation for hp in 3D. (Maximilian Bergbauer, Peter Munch, Andreas Ritthaler, Magdalena Schreter-Fleischhacker, 2024/02/09) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16620,
+"date": "2024-02-10",
+"title": "Fix the name by which we reference an exception class.",
+"commits": "Fix the name by which we reference an exception class.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16630,
+"date": "2024-02-12",
+"title": "Add colorize option to cylinder_shell",
+"commits": "Fix indent | Add a unit test for the colorized cylinder shell | Add adequate usage of colorize | Add const qualifier | Fix generator from name | Add documentation | Add colorize option to cylinder_shell",
+"cl": "",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 16632,
+"date": "2024-02-16",
+"title": "GridTools::compute_active_cell_halo_layer() for periodic meshes",
+"commits": "GridTools::compute_active_cell_halo_layer() for periodic meshes",
+"cl": "Fixed: The function GridTools::compute_active_cell_halo_layer() now also supports perodic meshes. (Peter Munch, 2024/02/12) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 16637,
+"date": "2024-02-14",
+"title": "Fix Tpetra vector element access.",
+"commits": "Use 'auto' instead of declaring a complicated type. | Apply the same patch also to the set() function. | Add an assertion. | Create views lazily, once we know that we need them. | Rearrange code slightly.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16641,
+"date": "2024-02-22",
+"title": "Added complex sparse matrix instantiations.",
+"commits": "ran indent | Add a changelog entry. | reworked test file and added ouput file | Added complex sparse matrix instantiations.",
+"cl": "Fixed: Added some instantiations to \"sparse_matrix.inst.in\" such that copying real sparse matrices into complex sparse matrices and performing matrix vector operations of a complex sparse matrix with a real vector into a complex vector are possible now. (Malik Scheifinger, 2024/02/16) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16653,
+"date": "2024-02-16",
+"title": "Fix segmentation fault when using mpich",
+"commits": "base/mpi.h: mark a template variable to have \"const inline\" linkage. | base/mpi.cc: remove superfluous explicit instantiations of template variable",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16673,
+"date": "2024-02-19",
+"title": "Fix `make_flux_sparsity_pattern` for `FENothing`",
+"commits": "fix make_flux_sparsity_pattern for FENothing",
+"cl": "Fixed: Fix make_flux_sparsity_pattern for a FECollection containing FENothing elements. (Magdalena Schreter-Fleischhacker, Andreas Ritthaler, 2024/02/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16676,
+"date": "2024-02-20",
+"title": "Tpetra: Add SparseMatrix::clear_row[s]",
+"commits": "Fix compiling clear_rows with newer Trilinos versions | Let clear_rows take an ArrayView argument | Tpetra: Add SparseMatrix::clear_row[s]",
+"cl": "",
+"newtests": 6,
+"nsrc": 6
+},
+{
+"pr": 16691,
+"date": "2024-02-23",
+"title": "`ParticleHandler`: use tolerance for is_inside_unit_cell() check",
+"commits": "add tolerance for inside cell check",
+"cl": "Fixed: In a special case where a particle lies on a vertex, the ParticleHandler detected it as lost. We introduce a tolerance for GeometryInfo<dim>::is_inside_cell() inside the ParticleHandler to fix this issue. (Magdalena Schreter-Fleischhacker, Julian Brotz, 2024/02/22) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 16694,
+"date": "2024-02-28",
+"title": "Fix issue with colorized cylinder shell",
+"commits": "Apply comments and add changelog | Fix indent | Remove useless spaces | Add tests for cases that lead to wrong boundary ID | Fix issue with the cylinder shell generator | Fix colorization of BCs in cylinder shell",
+"cl": "Fixed: The colorize option for the cylinder shell could yield inadequate boundary ID for some aspect ratios that were very different from the default one. (Bruno Blais, 2024/02/27) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16695,
+"date": "2024-02-27",
+"title": "MatrixFree: Fix function name in docu",
+"commits": "Fix function name in docu",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16705,
+"date": "2024-03-03",
+"title": "Fix `hp::Refinement::limit_p_level_difference` for p-coarsening",
+"commits": "Fix limit_p_level_difference for p-coarsening.",
+"cl": "Fixed: The function hp::Refinement::limit_p_level_difference() now correctly sets future FE indices in case of p-coarsening. (Marc Fehling, 2024/02/29) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16709,
+"date": "2024-03-07",
+"title": "Properly deregister a particle if deleted during refinement",
+"commits": "Add another test | Add changelog entry | Fix test case | Properly deregister a particle if deleted",
+"cl": "Fixed: The memory of particles which are deleted during refinement was not correctly freed in the memory pool. This could lead to a minor memory leak and error messages about an inconsistent state during destruction of the property pool. This is fixed now. (Rene Gassmoeller, 2024/03/07) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 16714,
+"date": "2024-03-15",
+"title": "Fix unintended terminate in gmsh-API version of read_msh",
+"commits": "Fix unintended terminate in gmsh-API version of read_msh",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16718,
+"date": "2024-03-06",
+"title": "Fix a grammar error.",
+"commits": "Fix a grammar error.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16731,
+"date": "2024-03-07",
+"title": "Fix Tpetra SparseMatrix::add().",
+"commits": "Fix Tpetra SparseMatrix::add().",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16744,
+"date": "2024-03-11",
+"title": "SolverGMRES: Fix loop bound for orthogonalization",
+"commits": "Remove second reinit statement | New test case | SolverGMRES: Fix loop bound for orthogonalization",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16749,
+"date": "2024-03-19",
+"title": "SolverGMRES: Implement classical Gram-Schmidt with delayed reorthogonalization",
+"commits": "Review comments | Change variable name 'dim' -> 'n' | Fix unnecessary allreduce | Clean up orthogonalization process by separate class | New test cases | SolverGMRES: Implement classical Gram-Schmidt with delayed reorthogonalization",
+"cl": "",
+"newtests": 3,
+"nsrc": 2
+},
+{
+"pr": 16750,
+"date": "2024-03-16",
+"title": "Fix uninitialized variable",
+"commits": "Increase number of digits in test output | Add warnings | Fix test | Fix uninitialized variable",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16753,
+"date": "2024-03-16",
+"title": "Add `spacedim` template parameter of DoFHandler",
+"commits": "Fix template parameter of DoFHandler",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16763,
+"date": "2024-03-20",
+"title": "Make sure two cell iterator arguments lead to correct type deduction.",
+"commits": "Make sure two cell iterator arguments lead to correct type deduction.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16771,
+"date": "2024-03-27",
+"title": "Align Tensor<rank,dim,Number> to make vectorization possible.",
+"commits": "Add a changelog entry for the alignment of tensors. | Align Tensor<rank,dim,Number> to make vectorization possible. | Add a changelog entry. | Address an alignment issue in Utilities::unpack().",
+"cl": "Changed: The Tensor class now has an alignment greater than what the compiler would automatically choose to enable more efficient memory operations on these objects. (Wolfgang Bangerth, 2024/03/23) Fixed: Utilities::unpack() could result in a segmentation fault for objects that have alignment greater than the default. This is now fixed. (Wolfgang Bangerth, 2024/03/24) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16787,
+"date": "2024-03-27",
+"title": "FEEvaluation: Fix submit_gradient in 1D",
+"commits": "Update changelog entry | New test case | FEEvaluation: Fix submit_gradient in 1D",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 16815,
+"date": "2024-03-30",
+"title": "Fix a second place where particles compute the size of a buffer.",
+"commits": "Fix a second place where particles compute the size of a buffer.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16831,
+"date": "2024-04-01",
+"title": "Fix two places where TriaAccessor::n_vertices is called repeatedly",
+"commits": "Fix two places where CellAccessor::n_vertices is called repeatedly",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16856,
+"date": "2024-05-01",
+"title": "Fix MG transfer for Tetrahedrons",
+"commits": "Fix MG transfer for Tetrahedrons",
+"cl": "",
+"newtests": 2,
+"nsrc": 13
+},
+{
+"pr": 16859,
+"date": "2024-04-06",
+"title": "Remove debug output",
+"commits": "Remove debug output",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16879,
+"date": "2024-04-15",
+"title": "Compatibility with SUNDIALS 7.",
+"commits": "Introduce get_communicator_by_value(). | Move parentheses out of preprocessor conditionals. | Use alias for sundials booleantype. | Use correct types for sundials 7.",
+"cl": "",
+"newtests": 0,
+"nsrc": 7
+},
+{
+"pr": 16898,
+"date": "2024-04-19",
+"title": "Fix use of incorrect Epetra function.",
+"commits": "Add a changelog entry. | Fix use of incorrect Epetra function.",
+"cl": "Fixed: When accessing elements of Trilinos vectors that do not exist on the current MPI process (for example because a function *expects* a vector with ghost elements but got a completely distributed vector instead), deal.II tries to produce a reasonable error message pointing out the cause. But when using 64-bit indices, the logic that creates the error message was faulty, resulting in errors that were very hard to debug and not helpful at all. This is now fixed. (Wolfgang Bangerth, 2024/04/17) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 16917,
+"date": "2024-04-21",
+"title": "Portable matrix-free: Fix Kokkos index access",
+"commits": "Portable matrix-free: Fix Kokkos index access",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 16940,
+"date": "2024-05-08",
+"title": "Fix p:f:T::load()",
+"commits": "Fix p:f:T::load()",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 16959,
+"date": "2024-05-15",
+"title": "Fix MG Transfer for Tetrahedrons",
+"commits": "Fix MG Transfer for Tetrahedrons",
+"cl": "Updated: Tetrahedral meshes are now refined quasi-uniformly, preventing degradation with higher refinement levels. The changes also include the relevant adjustments in the geometric multigrid infrastructure. (Dominik Still, Niklas Fehn, Peter Munch, Martin Kronbichler, Wolfgang Bangerth, 2024/05/10) Fixed: FE_SimplexP::get_restriction_matrix() now returns the correct restriction matrix for continuous elements, which differs compared to discontinuous elements. (Dominik Still, Martin Kronbichler, 2024/05/15) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 17024,
+"date": "2024-05-16",
+"title": "Use correct stream for output.",
+"commits": "Use correct stream for output. | Restrict operator<< for SymEngine auxiliary classes.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17033,
+"date": "2024-05-20",
+"title": "Raise error when DSP is used without IndexSet",
+"commits": "Tests fixed | The direct operator== is used now. | Dynamic Sparsity Pattern must be initialized with locally_relevant_rows. Without the suggested assertion, one could easily make a crucial mistake of initializing the sparsity pattern with global DoFs instead of local DoFs.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17068,
+"date": "2024-05-24",
+"title": "Fix regression test",
+"commits": "replace invalid unsigned ints",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17081,
+"date": "2024-05-25",
+"title": "fix incorrect comment in Tensor::unroll",
+"commits": "fix incorrect comment in Tensor::unroll",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17085,
+"date": "2024-05-30",
+"title": "fix bug in FESystem degree with 0 multiplicity",
+"commits": "fix bug in FESystem degreee with 0 multiplicity",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17096,
+"date": "2024-06-11",
+"title": "Fix querying time steps in ARKODE.",
+"commits": "Update a testcase for IDA. | Update the changelog entry. | Fix querying time steps in IDA. | Add a changelog entry. | Update a testcase for ARKODE. | Fix querying time steps in ARKODE.",
+"cl": "Fixed: The SUNDIALS::ARKODE::solve_ode() function returned the number of time steps at which the intermediate output function was called, rather than the number of time steps performed as promised in the documentation. This has now been fixed. The same bug also existed in the SUNDIALS::IDA::solve_dae() function, where it has also been fixed. (Wolfgang Bangerth, 2024/06/02) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17104,
+"date": "2024-06-04",
+"title": "Fix a grammar error.",
+"commits": "Fix a grammar error.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17106,
+"date": "2024-06-27",
+"title": "Fix symengine tests by reverting printing more to deallog",
+"commits": "Revert \"Merge pull request #17024 from bangerth/stream-for-output\"",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17135,
+"date": "2024-06-18",
+"title": "fix a bunch of latex formula errors",
+"commits": "fix a bunch of latex formula errors",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17137,
+"date": "2024-06-18",
+"title": "MatrixCreator: use queue_size=1 in debug mode",
+"commits": "MatrixCreator: use queue_size=1 in debug mode",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17138,
+"date": "2024-06-19",
+"title": "Fix rare division by zero",
+"commits": "Add changelog | Fix division by zero that should never happen.",
+"cl": "Fixed: The ParticleHandler could cause a division by zero for certain mappings when sorting particles that are located almost exactly on mesh vertices. This is fixed now. (Rene Gassmoeller, 2024/06/18) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17143,
+"date": "2024-06-19",
+"title": "Revert \"MatrixCreator: use queue_size=1 in debug mode\"",
+"commits": "Revert \"MatrixCreator: use queue_size=1 in debug mode\"",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17147,
+"date": "2024-06-21",
+"title": "Make access to GridTools::Cache thread safe.",
+"commits": "Add a changelog entry. | Also make access to the update flags of GridTools::Cache thread-safe. | Make access to data members of GridTools::Cache thread-safe.",
+"cl": "Fixed: The GridTools::Cache class accessed its members in ways that were not thread-safe. This should now be fixed. (Wolfgang Bangerth, 2024/06/19) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17159,
+"date": "2024-06-21",
+"title": "Fix quad numbers in MatrixFreeTools::compute_matrix()",
+"commits": "Add test | Fix quad_no in MatrixFreeTools::compute_matrix()",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17175,
+"date": "2024-07-02",
+"title": "Let AffineConstraints::make_consistent_in_parallel() iterate until converged.",
+"commits": "Test AffineConstraints::make_consistent_in_parallel() for hp constraints. | Let AffineConstraints::make_consistent_in_parallel() iterate until converged. | Correctly initialize AffineConstraints object in test.",
+"cl": "Fixed: AffineConstraints::make_consistent_in_parallel() now iteratively updates the constraints on user-specified DoFs until the set of constraints globally converged on all subdomains. The function now also updates the locally stored constraints of the underlying AffineConstraints object. After using this function, it might be necessary to use the IndexSet retrieved by AffineConstraints::get_local_lines() when initializing data structures, for example: <code> DynamicSparsityPattern dsp(constraints.get_local_lines()); LinearAlgebra::distributed::Vector<double> solution( locally_owned_dofs, constraints.get_local_lines(), mpi_communicator); </code> This used to be an issue in parallel hp-adapt",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 17177,
+"date": "2024-07-21",
+"title": "Implement new multigrid transfer with MatrixFree infrastructure",
+"commits": "Fix Windows compile | Use new transfer type in benchmark | New test cases | Implement new multigrid transfer (for p-multigrid)",
+"cl": "",
+"newtests": 3,
+"nsrc": 2
+},
+{
+"pr": 17186,
+"date": "2024-07-01",
+"title": "MappingFEField: check that vectors have the correct size.",
+"commits": "MappingFEField: check that vectors have the correct size.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17208,
+"date": "2024-07-05",
+"title": "Fix CppCheck complaints",
+"commits": "Restore comment | Restore signature for CellDataTransfer::unpack_callback | Fix CppCheck complaints",
+"cl": "",
+"newtests": 0,
+"nsrc": 24
+},
+{
+"pr": 17212,
+"date": "2024-07-05",
+"title": "Fix deal_II_exceptions::internal::abort [[noexcept]] attribute for old Kokkos",
+"commits": "Fix deal_II_exceptions::internal::abort [[noexcept]] attribute for old Kokkos",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17229,
+"date": "2024-07-09",
+"title": "ReadWriteVector: correctly copy an index set with no elements.",
+"commits": "ReadWriteVector: correctly copy an index set with no elements.",
+"cl": "Fixed: ReadWriteVector's copy constructor now correctly sets up its IndexSet when it has zero locally owned elements. (David Wells, Laryssa Abdala, 2023/07/08) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17257,
+"date": "2024-07-12",
+"title": "Fix Tpetra types for older Trilinos",
+"commits": "Fix Tpetra types for older Trilinos",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17273,
+"date": "2024-07-17",
+"title": "Triangulation: pack/unpack fixed/variable data",
+"commits": "Triangulation: pack/unpack fixed/variable data",
+"cl": "",
+"newtests": 0,
+"nsrc": 5
+},
+{
+"pr": 17311,
+"date": "2024-07-19",
+"title": "Fix Ifpack2 preconditioner type",
+"commits": "Fix Ifpack2 preconditioner type",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17329,
+"date": "2024-07-22",
+"title": "Fix TaskResult::clear().",
+"commits": "Fix TaskResult::clear().",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17345,
+"date": "2024-07-22",
+"title": "Periodic boundary conditions: Fix orientation problem",
+"commits": "Changelog | New test case | Periodic boundary conditions: Fix orientation problem",
+"cl": "Fixed: The identification of periodic boundaries for parallel::distributed::Triangulation did not work properly for some meshes that had different face orientations on the two sides of a periodic boundary. This is now fixed. (Martin Kronbichler, Paras Kumar, 2024/07/16) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17355,
+"date": "2024-07-23",
+"title": "fix NonlinearSolverSelector MPI_COMM",
+"commits": "fix NonlinearSolverSelector MPI_COMM",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17415,
+"date": "2024-08-06",
+"title": "Fix pointer traversal range of PETSc vectors on each process",
+"commits": "fix format of changelog | add changelog for PR fix_petsc_vector_entry_ptr | fix pointer traversal range of PETSc vectors on each process",
+"cl": "Fix: Corrected pointer iteration range in VectorBase::mean_value() and VectorBase::lp_norm() in PETScWrappers namespace to proper handle distributed PETSc vectors. Now pointers obtained via VecGetArrayRead() iterate only over locally_owned_size(), and results are correctly aggregated across processes. (Qingyuan Shi, 2024/08/01) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17428,
+"date": "2024-08-04",
+"title": "Fix MatrixFreeTools::compute_diagonal",
+"commits": "Fix MatrixFreeTools::compute_diagonal",
+"cl": "Fixed: MatrixFreeTools::compute_diagonal() used to use first_selected_component also for accessing (block) vectors. This has been fixed. (Peter Munch, Nils Much, 2024/07/30) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17430,
+"date": "2024-08-08",
+"title": "Fix Tpetra with MemorySpace::Default",
+"commits": "Prefer KOKKOS_ENABLE_* over HAVE_TPETRA_INST_* | Give make_tpetra_map a default argument | Avoid duplicated template instantiation | Guard explicit template instantiations from doxygen | Fix Tpetra with MemorySpace::Default",
+"cl": "",
+"newtests": 0,
+"nsrc": 13
+},
+{
+"pr": 17432,
+"date": "2024-08-05",
+"title": "Fix MatrixFreeTools::compute_matrix()",
+"commits": "Fix MatrixFreeTools::compute_matrix()",
+"cl": "Fixed: MatrixFreeTools::compute_matrix() now correctly handles the case that individual components are requested. (Peter Munch, 2024/08/04) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17454,
+"date": "2024-08-08",
+"title": "Fix Tpetra for 13.0",
+"commits": "Fix Tpetra for 13.0",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17469,
+"date": "2024-08-12",
+"title": "Check all PETSc index conversions.",
+"commits": "PETScWrappers::VectorBase: use a better assertion. | PETScWrappers::MatrixBase: fix an assertion. | PETScWrappers::MPI::Vector: add index conversion checks. | PETScWrappers::VectorBase: add index conversion checks. | PETScWrappers::SparseMatrix: add index conversion checks. | PETScWrappers::MPI::Spa",
+"cl": "",
+"newtests": 0,
+"nsrc": 10
+},
+{
+"pr": 17485,
+"date": "2024-08-13",
+"title": "enable c++ standard library debug checks",
+"commits": "fix test: invalid memory access | MGTransferMF: fix nullptr access | enable c++ standard library debug checks",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17507,
+"date": "2024-08-13",
+"title": "Fix PETScWrappers::MatrixBase::add()",
+"commits": "PETScWrappers::MatrixBase: use small_vector to avoid an allocation. | PETScWrappers::MatrixBase: consolidate the add and set functions. | PETScWrappers::MatrixBase: remove some mutable variables.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17512,
+"date": "2024-08-13",
+"title": "Fix undefined behavior when advancing nullptr",
+"commits": "Fix undefined behavior when advancing nullptr",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17520,
+"date": "2024-08-17",
+"title": "Assert correction for issue #17450",
+"commits": "change the -> operator | Attempt to fix for step.90 crashing with the assert previously implemented | Assert correction for issue #17450",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17555,
+"date": "2024-08-17",
+"title": "fixed (void) in grid_tools.cc",
+"commits": "worked on (void) occurences during workshop",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17569,
+"date": "2024-08-20",
+"title": "Allow to place FEFaceEvaluation objects in std::vector",
+"commits": "Changelog | Test case | Allow to include FEFaceEvaluation in std::vector",
+"cl": "Fixed: Objects of type FEFaceEvaluation can now be collected in an std::vector. (Martin Kronbichler, John Coughlin, 2024/08/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17579,
+"date": "2024-09-06",
+"title": "Portable MatrixFree: compute diagonal",
+"commits": "Add a missing typename | Fix missing typename | Fix step-64 test | Update step-64 | Update interface to allow setting cell and data | Fix up tests | Fix hanging node constraints | Portable MatrixFree: compute diagonal",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17584,
+"date": "2024-08-28",
+"title": "Fix FiniteElement::has_support_points() for FE_Nothing.",
+"commits": "Add test. | Add a changelog. | Fix FiniteElement::has_support_points() for FE_Nothing.",
+"cl": "Fixed: The FiniteElement::has_support_points() function is poorly named because it does not return *whether* an element has support points, but whether it *implements* the FiniteElement::get_unit_support_points() function correctly. Because of this misunderstanding, it returned `false` for the FE_Nothing element. This is now fixed: FE_Nothing::has_support_points() now returns `true`, because the empty array returned by FE_Nothing::get_unit_support_points() correctly describes the support points the element has (namely: it does not have any, as there are no degrees of freedom). (Wolfgang Bangerth, 2024/05/19) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 17590,
+"date": "2024-09-04",
+"title": "Fix FiniteElement::has_generalized_support_points() and FiniteElement::has_face_support_points()  for FE_Nothing. #17584",
+"commits": "Complementary work to fix FiniteElement::has_*() functions for FE_Nothing.",
+"cl": "Fixed: Previously, FiniteElement::has_generalized_support_points() and FiniteElement::has_face_support_points() returned false for the FE_Nothing element. Now, FE_Nothing::has_generalized_support_points() and FE_Nothing::has_face_support_points() correctly return true, as the empty arrays returned by FE_Nothing::get_generalized_support_points() and FE_Nothing::get_unit_face_support_points() accurately describe the support points of the element(i.e., they don't have any, as there are no degrees of freedom). (Oreste Marquis, 2024/08/21) ",
+"newtests": 2,
+"nsrc": 3
+},
+{
+"pr": 17617,
+"date": "2024-08-27",
+"title": "Finish remaining void cast tutorial PRs",
+"commits": "Cleanup commits | Replaced void with maybe_unused | fix_void_problem | Make use of [[maybe_unused]] instead of (void) (first 5 occurrences)",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 17626,
+"date": "2024-09-03",
+"title": "Don't merge constraints, just drop constraints.",
+"commits": "Add a changelog entry. | Fix a test. | Add the testcase from #17599. | Add another test. | Add a test. | Don't merge, just drop constraints.",
+"cl": "Fixed: The AffineConstraints::make_consistent_in_parallel() function made sure that constraints for a degree of freedom stored on different processes were the same, but they were occasionally wrong. This has now been fixed. (Wolfgang Bangerth, 2024/08/30) ",
+"newtests": 3,
+"nsrc": 2
+},
+{
+"pr": 17628,
+"date": "2024-08-29",
+"title": "Fix Tpetra vector compression state after add() into locally owned entry",
+"commits": "Fix Tpetra vector compression state after add() into locally owned entry",
+"cl": "Fix: Add the missing `compressed = false` in TpetraWrappers::Vector::add() function to ensure distributed Tpetra vector with writable nonlocal entries will always be non-compressed after any entry addition. (Qingyuan Shi, 2024/08/28)",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17666,
+"date": "2024-09-27",
+"title": "Generalized read_msh to allow for comments",
+"commits": "modify comments | correct typos | Modified code logic to delete all the comments before parsing | Indent | Modified read_msh function to take into account comments and other msh file structures",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17678,
+"date": "2024-09-10",
+"title": "Triangulation::get_boundary_ids(): don't return duplicates.",
+"commits": "Triangulation::get_boundary_ids(): don't return duplicates.",
+"cl": "Fixed: Triangulation::get_boundary_ids() does not return duplicates when `dim == 1` any more. (David Wells, 2024/09/06) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17709,
+"date": "2024-09-18",
+"title": "Fix normal_hessian functions for arbitrary number of components",
+"commits": "fix failing test | add test | fix normal_hessian n_comp",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17737,
+"date": "2024-09-30",
+"title": "A fix for a bug in the time table",
+"commits": "A fix for a bug in the time table",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17744,
+"date": "2024-11-01",
+"title": "Replace std::array with Kokkos::Array in Tensor",
+"commits": "Fix C++20 Tensor initialization | Only use Kokkos::Array with Kokkos 3.7 or newer | Replace std::array with Kokkos::Array in Tensor",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17751,
+"date": "2024-10-08",
+"title": "TableHandler::set_scientific(): fix int",
+"commits": "TableHandler::set_scientific(): fix int",
+"cl": "Improved: TableHandler now correctly outputs Integers if TableHandler::set_scientific() is set. (Peter Munch, 2024/10/05) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17755,
+"date": "2025-01-24",
+"title": "Nedelec orientation fix nr.1.",
+"commits": "Nedelec orientation fix nr.1.",
+"cl": "",
+"newtests": 9,
+"nsrc": 3
+},
+{
+"pr": 17772,
+"date": "2024-10-13",
+"title": "Fix type in SparsityPattern",
+"commits": "Fix type in SparsityPattern",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17785,
+"date": "2024-10-22",
+"title": "Fix cubic simplex constraints.",
+"commits": "Verify that FE_System<2>(FE_SimplexP<2>(3), N) works. | FE_Q_Base: cleanup. | FE_SimplexP: support hanging nodes with cubic elements.",
+"cl": "Fixed: FESystem now works correctly with cubic FE_SimplexP elements. (David Wells, 2024/10/15) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17818,
+"date": "2024-10-30",
+"title": "Fix terminology.",
+"commits": "Fix terminology.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17822,
+"date": "2024-11-01",
+"title": "Fix up Utilities::posix_memalign().",
+"commits": "Fix up Utilities::posix_memalign().",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17825,
+"date": "2024-11-02",
+"title": "MatrixFree: Make DoFInfo::memory_consumption more accurate",
+"commits": "MatrixFree: Fix DoFInfo::memory_consumption",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17833,
+"date": "2024-11-03",
+"title": "Fix link",
+"commits": "Fix link",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17838,
+"date": "2024-11-04",
+"title": "Fix tensor conversion",
+"commits": "Add test | Fix tensor conversion",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17844,
+"date": "2024-11-05",
+"title": "",
+"commits": "parallel::transform() fix iterator type",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17850,
+"date": "2024-11-08",
+"title": "Fix types in parallel.h for TBB.",
+"commits": "Fix types in parallel.h for TBB.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17865,
+"date": "2024-11-26",
+"title": "",
+"commits": "add instantiation | fix instantiations | fix | fix | add default template argument | enable MemorySpace in GMG transfer",
+"cl": "",
+"newtests": 0,
+"nsrc": 10
+},
+{
+"pr": 17866,
+"date": "2024-12-11",
+"title": "Extend read_vtk to add FIELD data (Previously PR #10649)",
+"commits": "fixed indentation in modified files | Renamed field_data as cell_data and changed type from std::vector<double> to Vector<double> | Fixed cell indexing in the test for reading vtk mesh with field data | Misc minor changes based on PR review | Read meshes with field data in read_vtk()",
+"cl": "",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 17871,
+"date": "2024-11-19",
+"title": "Fix bug in MatrixFreeTools::compute_diagonal for FE_Nothing",
+"commits": "Fix bug in MatrixFreeTools::compute_diagonal for FE_Nothing",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 17872,
+"date": "2024-11-19",
+"title": "",
+"commits": "Fix get_communicator_by_value for SUNDIALS 7",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17880,
+"date": "2024-11-22",
+"title": "Fix an obviously wrong comment.",
+"commits": "Fix an obviously wrong comment.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17904,
+"date": "2024-12-04",
+"title": "",
+"commits": "Fix typos | Add second output for step-18 | Workaround rocm 5.7 compiler bug in debug mode when evaluating an if condition | Workaround rocm 5.7 compiler bug in debug mode",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 17905,
+"date": "2024-12-04",
+"title": "Fixed normal direction for the last component for RT elements",
+"commits": "Fixed normal direction fro the last component for RT elements in evaluation_kernels",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17934,
+"date": "2024-12-18",
+"title": "Fix markup.",
+"commits": "Fix markup.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17935,
+"date": "2024-12-18",
+"title": "Fix a place incorrectly using std::is_trivial.",
+"commits": "Fix a place incorrectly using std::is_trivial.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17936,
+"date": "2024-12-18",
+"title": "Avoid another incorrect use of std::is_trivial.",
+"commits": "Avoid another incorrect use of std::is_trivial.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17937,
+"date": "2024-12-18",
+"title": "Avoid another incorrect use of std::is_trivial.",
+"commits": "Avoid another incorrect use of std::is_trivial.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17938,
+"date": "2024-12-18",
+"title": "Avoid the final incorrect use of std::is_trivial.",
+"commits": "Avoid the final incorrect use of std::is_trivial.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17949,
+"date": "2024-12-19",
+"title": "Fix the name of an object library.",
+"commits": "Fix the name of an object library.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17950,
+"date": "2024-12-24",
+"title": "Fix VectorTools::interpolate for FE_Nothing",
+"commits": "Fix interpolate for FE_Nothing",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17973,
+"date": "2025-01-05",
+"title": "Fix assert about distributed tria in NonMatching namespace",
+"commits": "Fix assert on distributed tria",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 17994,
+"date": "2025-01-17",
+"title": "Don't use a .templates.h file if we unconditionally include it anyway.",
+"commits": "Fix an #include. | Don't use a .templates.h file if we unconditionally include it anyway.",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 17995,
+"date": "2025-01-17",
+"title": "Do not make a difference between debug/release mode when to include a file.",
+"commits": "Disentangle some includes. | Do not make a difference between debug/release mode when to include a file.",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 18001,
+"date": "2025-01-28",
+"title": "",
+"commits": "Add a changelog entry. | Update test outputs | Avoid the use of GeometryInfo in particle_handler.cc.",
+"cl": "Fixed: When checking whether a particle is in a specific cell, ParticleHandler always assumed that the cell is a quadrilateral or hexahedron. This is of course correct if the mesh only contains such cells, but is wrong if you are working on simplex or mixed meshes and sometimes led to putting particles into the wrong cells. This is now fixed. (Wolfgang Bangerth, Bruno Blais, 2025/01/27) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18006,
+"date": "2025-01-17",
+"title": "Fix a comment.",
+"commits": "Fix a comment.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18007,
+"date": "2025-01-16",
+"title": "Fix an error message.",
+"commits": "Fix an error message.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18015,
+"date": "2025-01-21",
+"title": "Fix class name in description of DiagonalMatrix",
+"commits": "Fix class name in description of DiagonalMatrix",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18028,
+"date": "2025-01-28",
+"title": "Fix an issue with spaces in ParameterHandler output.",
+"commits": "Add a test. | Fix an issue with spaces in ParameterHandler output.",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18036,
+"date": "2025-01-27",
+"title": "",
+"commits": "Fix MF::get_cell_active_fe_index() for non-hp and hp-DoFHandlers",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18056,
+"date": "2025-01-30",
+"title": "Fix '#if DEBUG' statements.",
+"commits": "Fix '#if DEBUG' statements.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18057,
+"date": "2025-02-28",
+"title": "Where possible, replace '#ifdef DEBUG' by 'if constexpr(...debug mode...').",
+"commits": "Where possible, replace '#ifdef DEBUG' by 'if constexpr(...debug mode...') in tests/. | Where possible, replace '#ifdef DEBUG' by 'if constexpr(...debug mode...') in examples/. | Where possible, replace '#ifdef DEBUG' by 'if constexpr(...debug mode...'). | Provide a way to query debug/release status",
+"cl": "",
+"newtests": 0,
+"nsrc": 109
+},
+{
+"pr": 18065,
+"date": "2025-01-31",
+"title": "Fix step_operations() for MemorySpace::Default",
+"commits": "Fix step_operations() for MemorySpace::Default>",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18068,
+"date": "2025-05-09",
+"title": "Fix `extract_boundary_mesh()` for simplex meshes",
+"commits": "Replace one usage of GeometryInfo<dim>::face_indices() with reference_cell().face_indices() for simplex mesh support",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18098,
+"date": "2025-03-05",
+"title": "Include Ghost cells in MatrixFree data starage: active level. Tests.",
+"commits": "Update doc/news/changes/minor/20250130Wichrowski | corret indetnation | tests for level operator. correct decription for _26 | include ghosted cell in MF: support for active level operator. Testing.",
+"cl": "New: Matrix-Free now can build data structures for ghosted cells. The functionality can be accessed by AdditionalData::store_ghost_cells. (Micha\u0142 Wichrowski, 2025/01/30) ",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 18113,
+"date": "2025-02-10",
+"title": "Fix grid_tools.cc without MPI and ArborX.",
+"commits": "Fix grid_tools.cc without MPI and ArborX.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18135,
+"date": "2025-02-13",
+"title": "Fix includes for numerics/nonlinear.h",
+"commits": "Fix includes for numerics/nonlinear.h",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18147,
+"date": "2025-02-19",
+"title": "Fix a preprocessor #define.",
+"commits": "Fix a preprocessor #define.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18161,
+"date": "2025-02-25",
+"title": "Fix a missing #include.",
+"commits": "Fix a missing #include.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18179,
+"date": "2025-02-28",
+"title": "Fix division by zero in particle generator 'probabilistic_locations'",
+"commits": "Fix division by zero in particle generator",
+"cl": "Fixed: The particle generator function 'probabilistic_locations' could under certain conditions cause a division by zero if the user-provided probability density function evaluated to 0 everywhere in a local domain, but not globally. This has been fixed. (Rene Gassmoeller, 2025/02/28) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18181,
+"date": "2025-03-01",
+"title": "Avoid a couple more uses of the DEBUG macro.",
+"commits": "Avoid a couple more uses of the DEBUG macro.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18195,
+"date": "2025-03-08",
+"title": "Fix tasking deadlocks",
+"commits": "do not launch taskflow tasks from inside tasks",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18198,
+"date": "2025-03-07",
+"title": "fix local sparsity for Q_iso_Q1",
+"commits": "fix local sparsity for Q_iso_Q1",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18259,
+"date": "2025-03-24",
+"title": "Add geometry in GridGenerator pass by arguments",
+"commits": "Add entry to changelog | Add subdivided_hyper_L to grid generator test | Fix indent | Add subdivided_hyper_L case to generate grid by arguments",
+"cl": "Fixed: The geometry subdivided_hyper_L could not be generated using grid_generator_from_name. This has been fixed by adding this geometry case in said function. A test has also been added. (Bruna Campos, 2025/03/20) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18261,
+"date": "2025-03-20",
+"title": "portable matrix-free: fix GPU crash in compute_diagonal()",
+"commits": "portable matrix-free: fix GPU crash in compute_diagonal()",
+"cl": "New: Portable::FEEvaluation::get_current_cell_index() and Portable::FEEvaluation::get_matrix_free_data() allow querying the current Portable::MatrixFree::Data object and the current cell index respectively. (Daniel Arndt, Timo Heister, 2025/03/19) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18280,
+"date": "2025-03-24",
+"title": "Fix a problem with DoFTools::map_dofs_to_support_points() and FE_Nothing.",
+"commits": "Add a changelog entry. | Add test. | Fix a problem with DoFTools::map_dofs_to_support_points() and FE_Nothing.",
+"cl": "Fixed: DoFTools::map_dofs_to_support_points() did not work when there were cells in the mesh that had no degrees of freedom (e.g., because the cell's finite element was FE_Nothing). This is now fixed. (Davit Gyulamiryan, Wolfgang Bangerth, 2025/03/23) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18281,
+"date": "2025-03-24",
+"title": "Fix a wrong word.",
+"commits": "Fix a wrong word.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18286,
+"date": "2025-03-25",
+"title": "FEPointEvaluation: enable normal derivatives for arbitrary number of components",
+"commits": "Add test | Fix get/submit_normal_derivative for arbitrary number of components",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18290,
+"date": "2025-05-06",
+"title": "Implement MPGMRES - multiply preconditioned generalized minimal residual method",
+"commits": "Solver(F|MP)GMRES: make order of AdditionalData fields consistent | SolverMPGMRES: fix typo in documentation | SolverMPGMRES: add another test | SolverMPGMRES: update documentation | SolverMPGMRES: refactor internal lambdas | SolverMPGMRES: refactor parameter into function argument | added changelog",
+"cl": "New: Added a new class SolverMPGMRES that implements a variant of the GMRES algorithm allowing for the use of multiple preconditioners at once. For more details, see @cite Greif2017. (Wyatt Smith, Matthias Maier, 2025/04/10) Changed: Flexible GMRES can be viewed as a special case of the MPGMRES algorithm. Consequently, the SolverFGMRES class is now derived from SolverMPGMRES and its solve method now supports the function signature <code> solve(A, x, b, preconditioner_1, preconditioner_2, ...) </code> (Wyatt Smith, Matthias Maier, 2025/04/10) ",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 18316,
+"date": "2025-04-01",
+"title": "Fix two minor orientation bugs.",
+"commits": "Fix two minor orientation bugs.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18338,
+"date": "2025-04-08",
+"title": "Fix naming of variables in tria.cc, part 1.",
+"commits": "Fix naming of variables in tria.cc, part 1.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18339,
+"date": "2025-04-21",
+"title": "",
+"commits": "Fix naming of variables in tria.cc, part 2.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18340,
+"date": "2025-04-21",
+"title": "",
+"commits": "Fix naming of variables in tria.cc, part 3.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18350,
+"date": "2025-04-15",
+"title": "Fix MFT::compute_diagonal() for non-hp- and hp-DoFHandlers attached to MatrixFree",
+"commits": "MF: allow to get active_fe_index and category for specific dof index | Fix active fe index in MFT | Add test: matrix_free/compute_diagonal_13",
+"cl": "",
+"newtests": 1,
+"nsrc": 4
+},
+{
+"pr": 18355,
+"date": "2025-04-18",
+"title": "",
+"commits": "QProjector::project_to_all_faces(): combine all three versions. | QProjector::project_to_all_faces(): combine all 3d code. | FEInterfaceValues tests: check with a tolerance. | QProjector: index hexes the same way as everything else. | ReferenceCell: fix some 0d code.",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 18359,
+"date": "2025-04-15",
+"title": "MPI::NoncontiguousPartitioner: Fix missing clearing of variables in reinit",
+"commits": "add additional clear in reinit",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18361,
+"date": "2025-05-02",
+"title": "Add 1D matrices to MatrixCreator",
+"commits": "resolve comments | fix format | fix indentation | changelog | passing, verified tests for kronecker product | kronecker product test | tests for 1D matrices | remove .cc -> template | output for test | improve the output | inlcude laplace in tests | tests | updated documentation moved implementation",
+"cl": "Added: 1D matrices: mass, laplace, ghost penalty. FullMatrix::kronecker_product. (Micha\u0142 Wichrowski, 2025/05/01) ",
+"newtests": 3,
+"nsrc": 3
+},
+{
+"pr": 18379,
+"date": "2025-05-01",
+"title": "Give the combined orientation a glossary entry.",
+"commits": "Fix some minor documentation bugs in GeometryInfo. | Add a glossary entry for the combined orientation.",
+"cl": "",
+"newtests": 0,
+"nsrc": 11
+},
+{
+"pr": 18387,
+"date": "2025-04-25",
+"title": "Fix an include statement.",
+"commits": "Fix an include statement.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18390,
+"date": "2025-05-08",
+"title": "Fix FETools::extrapolate  (#18389)",
+"commits": "make indent | Correcting doc of FETools::extrapolate and adding contribution statement | Spelling out template arguments for clarity. | Apply suggestions from code review | Simplifying the logic of the fix. | fix include ordering | grammar correction | Correct include statements in deal.II/fe/fe_too",
+"cl": "Fixed: FETools::extrapolate previously failed to correctly compress ghost values on MPI simulations with distributed triangulation and LinearAlgebra::distributed vectors, due to the different behaviours of the compress(insert) operation on Petsc/Trilinos and LinearAlgebra::distributed vectors. This is now fixed. (Guilhem Poy, 2025/05/08) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18391,
+"date": "2025-05-02",
+"title": "Cleanup `set_periodicity_constraints()`",
+"commits": "set_periodicity_constraints(): add a clarifying comment. | set_periodicity_constraints(): remove the std::map. | set_periodicity_constraints(): refactor some assertions. | set_periodicity_constraints(): use ReferenceCell. | DoFAccessor: improve some comments. | make_periodicity_constraints(): Fix a ",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18393,
+"date": "2025-04-30",
+"title": "",
+"commits": "Fix: explicitly instantiate BlockSparseMatrix::reinit(vector<IndexSet>, BlockDynamicSparsityPattern, MPI_Comm, bool)",
+"cl": "Fix: Add explicit instantiation for TpetraWrappers::BlockSparseMatrix::reinit (std::vector<IndexSet>, BlockDynamicSparsityPattern, MPI_Comm, bool) to fix missing symbol error when initializing Tpetra block matrices from distributed sparsity patterns. (Qingyuan Shi, 2025/04/27) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18408,
+"date": "2025-05-09",
+"title": "Fix missing copy of nonlocal_vector in `TpetraWrappers::Vector` assignment operator",
+"commits": "Add assertion in TpetraWrappers::Vector::operator=() to require compressed source",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18416,
+"date": "2025-05-07",
+"title": "Fix some broken links.",
+"commits": "Fix some broken links.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18437,
+"date": "2025-05-08",
+"title": "Fix missing assertion for undefined parameters in JSON input parsing",
+"commits": "fix skip undefined for json file",
+"cl": "Fix: Ensure that undefined parameters within nested JSON subnodes trigger proper exception handling when using ParameterHandler::parse_input_from_json() with skip_undefined set to false. Previously, the exception ExcEntryUndeclared was only thrown when undefined parameters appeared at the top level of the parameter file. This fix extends the check to nested subnode entries as well. (Magdalena Schreter-Fleischhacker, 2025/05/08) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18459,
+"date": "2025-05-16",
+"title": "Fix `IndexSet::make_petsc_is()`.",
+"commits": "Fix IndexSet::make_petsc_is().",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18465,
+"date": "2025-05-23",
+"title": "CGALWrappers: Consistently return closed and oriented surface meshes",
+"commits": "changes to CGAL functions",
+"cl": "Fixed: CGALWrappers dealii_cell_to_cgal_surface_mesh and dealii_tria_to_cgal_surface_mesh now consistently return closed and oriented surface meshes for tets and hex. This avoids errors in boolean operations. (Sascha Hofstetter, 2025/05/20) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18486,
+"date": "2025-07-22",
+"title": "",
+"commits": "fix Kokkos module | Kokkos: support and test SymmetricTensor",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18497,
+"date": "2025-06-24",
+"title": "MPI support for MUMPS",
+"commits": "Use directly petsc and trilinos interfaces | Address some comments | Fix tests | Set rhs parameters during initialization | Fix documentation in SparseDirectMUMPS | Add MPI support for MUMPS | Avoid raw pointers in SparseDirectMUMPS",
+"cl": "",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 18509,
+"date": "2025-05-27",
+"title": "Fix argument list to dummy MUMPS constructor",
+"commits": "Fix argument list to dummy MUMPS constructor",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18529,
+"date": "2025-05-31",
+"title": "",
+"commits": "Fix Householder test",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18544,
+"date": "2025-06-03",
+"title": "Use correct data type.",
+"commits": "Use correct data type.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18552,
+"date": "2025-07-07",
+"title": "Add a new grid generator for a uniform channel with a cylinder",
+"commits": "Re-establish coherence with grid generator from n. | Indent | Switch vector to a reference | Change changelog entry | rename files and generator | Change architecture to use a std::vector instead | Add the option to use or not use a transfinite manifold | Fix spelling mistake in changelog | Remove [",
+"cl": "Added: A new mesh generator (uniform_channel_with_cylinder) for a channel in which there is a cylindrical obstacle. All dimensions of the channel can be customized by the user at the moment of the grid generation. (Bruno Blais, 2025/06/10) ",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 18568,
+"date": "2025-06-20",
+"title": "Fix thin hyper shell colorization of top boundary",
+"commits": "Indent | Fix quarter hyper shell colorization for thin shells.",
+"cl": "Fixed: The function GridGenerator::quarter_hyper_shell would colorize the boundary ids of the triangulation incorrectly if the created shell was too thin. In particular the top and bottom boundary ids would not be set. This did not matter for the bottom boundary since it is 0, which is also the default value, but the top boundary would not be marked correctly for these geometries. This is fixed now. (Rene Gassmoeller, 2025/06/18) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18574,
+"date": "2025-06-23",
+"title": "Correctly use manifold in half hyper shell colorization",
+"commits": "Correctly use manifold in half hyper shell colorization",
+"cl": "Fixed: The function GridGenerator::half_hyper_shell would colorize the boundary ids of the triangulation incorrectly if the created shell was too thin. In particular the top and bottom boundary ids would be set incorrectly. This is fixed now. (Rene Gassmoeller, 2025/06/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18582,
+"date": "2025-06-26",
+"title": "TriaAccessor<0, dim, spacedim>: make the default measure 1.0.",
+"commits": "TriaAccessor<0, dim, spacedim>: make the default measure 1.0.",
+"cl": "Fixed: TriaAccessor::measure() now returns 1 for all `structdim == 0` objects. (David Wells, 2025/06/25) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18590,
+"date": "2025-06-28",
+"title": "Fix error in sparse_direct when either PETSc or Trilinos is enabled without the other",
+"commits": "Guard relevant blocks against case where only PETSc or Trilinos is active",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18596,
+"date": "2025-06-29",
+"title": "Update pre-commit.",
+"commits": "Fix typos. | Update pre-commit-config.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18607,
+"date": "2025-07-01",
+"title": "",
+"commits": "Fix Doxygen building of Ifpack2 wrappers",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18611,
+"date": "2025-07-02",
+"title": "",
+"commits": "TriangulationDescription: documentation fixes",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18668,
+"date": "2025-07-11",
+"title": "Fix the memory consumption function.",
+"commits": "changelog | Update source/lac/petsc_matrix_base.cc | Fix the memory consumption function.",
+"cl": "Fixed: PetscWrappers::SparseMatrix::memory_consumption() previously always returned 0. This is now fixed. (Anna Long, 2025/07/11) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18680,
+"date": "2025-07-25",
+"title": "Tools for SBM: ClosestSurfacePoint class",
+"commits": "Fix convergence test in closest_surface_point. Consistency with a comment | fix intentation | Update tests/non_matching/closest_surfrace_point_01.cc | Update tests/non_matching/closest_surfrace_point_01.cc | closest surface search",
+"cl": "",
+"newtests": 1,
+"nsrc": 4
+},
+{
+"pr": 18753,
+"date": "2025-07-27",
+"title": "",
+"commits": "Fix more modules for external dependencies",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18754,
+"date": "2025-08-09",
+"title": "Fix: TpetraWrappers::Vector::locally_owned_elements() returns wrong index set",
+"commits": "Add a test to verify that TpetraWrappers::Vector::locally_owned_elements() returns the correct index set. | Store the non-locally owned entries.",
+"cl": "",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 18756,
+"date": "2025-07-25",
+"title": "Add test for identification of faces in matrix-free framework",
+"commits": "Update test output | Attempt to fix the problem | Add case without adaptivity | Add test for identification of faces in matrix-free framework",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18772,
+"date": "2025-07-30",
+"title": "",
+"commits": "fix nvcc work-around in petsc_matrix_base.h",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18798,
+"date": "2025-08-19",
+"title": "Vtk5.1 support",
+"commits": "added test | fixed typos | moved test mesh to test folder | fixed indent | restructured code | added test mesh | initialized condition | fixed indent | added contribution | added support for vtk 5.1",
+"cl": "New: GridIn used to support vtk meshes with version 3.0 only. Now it supports vtk meshes with version 5.1. (Mohamad Ghadban, 2025/08/09) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18802,
+"date": "2025-08-12",
+"title": "Fix default for MatrixOut.",
+"commits": "Adjust a test. | Fix default for MatrixOut.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18822,
+"date": "2025-09-01",
+"title": "",
+"commits": "avoid unused variable warnings | try clang 19 | work-around nvcc 12.3 compiler bug | github actions: switch from cuda 11 to cuda 12",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18830,
+"date": "2025-08-19",
+"title": "Zero out previous content in PolynomialsVectorAnisotropic::evaluate()",
+"commits": "Changelog | Add test case | Zero out previous content in PolynomialsVectorAnisotropic::evaluate()",
+"cl": "Fixed: Polynomials derived from the class PolynomialsVectorAnisotropic would previously not overwrite all previous content in the `values`, `grads` and higher derivative fields that are designated as output. The behavior has been fixed, making sure that all content is explicitly written in the function. (David Wells, Martin Kronbichler, 2025/08/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18852,
+"date": "2025-09-09",
+"title": "Fix grammar.",
+"commits": "Fix grammar.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18860,
+"date": "2025-09-12",
+"title": "MGTransferMatrixFree: fix min_level",
+"commits": "MGTransferMatrixFree: fix min_level",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 18865,
+"date": "2025-09-12",
+"title": "Fix a missing spacedim.",
+"commits": "Fix a missing spacedim.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18867,
+"date": "2025-09-13",
+"title": "Fix grammar in a comment.",
+"commits": "Fix grammar in a comment.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18884,
+"date": "2025-09-23",
+"title": "LowStorageRungeKutta: fix size of a",
+"commits": "LowStorageRungeKutta: fix size of a",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18894,
+"date": "2025-10-06",
+"title": "DataOut: remove captured `this` to avoid dangle after copy/move",
+"commits": "DataOut: remove captured `this` to avoid dangle after copy/move",
+"cl": "Fixed: Resolved an access violation when using a dealii::DataOut object that has been copied or moved. (Daniel Abele, 2025/09/26) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18902,
+"date": "2025-10-03",
+"title": "MGTransferMatrixFree::initialize_dof_vector no longer checks for compatible partitioners",
+"commits": "MGTransferMatrixFree::initialize_dof_vector optionally enforces the vector and transfer partitioner to be the same",
+"cl": "Fixed: `MGTransferMatrixFree::initialize_dof_vector()` optionally forces the target vector to have the same partitioner as stored in the transfer operator. This fixes a bug where the two partitioners were assumed to be the same in `MGTwoLevelTransfer::restrict_and_add()`, triggering an assertion in debug mode for block-based systems. (Michele Bucelli, 2025/10/01) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 18938,
+"date": "2025-11-05",
+"title": "Add support for PSBLAS distributed vectors",
+"commits": "Make psblas work with modules | Remove default communicator | Add psblas.ccm | Fix CI | Avoid malloc-free and add checks to integer conversions. | Use ierr, move exceptions to public section. | Add add(scalar), scale(vec), mean_value() and update tests | Fix CI | Introduce psblas vectors. Add tests.",
+"cl": "",
+"newtests": 5,
+"nsrc": 6
+},
+{
+"pr": 18946,
+"date": "2026-06-27",
+"title": "MatrixFree: extend hp adaptivity features for DG",
+"commits": "Fix | MatrixFree: extend hp adaptivity features for DG",
+"cl": "Improved: The hp adaptivity features for DG of MatrixFree have been extended. For face-centric loops, neighboring cells can have quadrature rules with different number of quadrature points. On each face, the quadrature rule with the highest number of quadrature points is used. For element-centric loops, p-adaptivity is enabled. It is experimental, since categorization and hp-enabled DoFHandler are not supported at the same time by MatrixFree, limiting, in most cases, the usablity to VectorizedArray<double, 1>. (Peter Munch, 2025/10/21) ",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 18962,
+"date": "2025-10-28",
+"title": "Fix naming of function arguments.",
+"commits": "Fix naming of function arguments.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 18993,
+"date": "2025-11-11",
+"title": "Fix tria move missing member",
+"commits": "added missing member cell_attached_data to move constructer and move assignement added changes to news ran make indent, fixed typos fixed test output remove unnecessary newline (fix pre-commit error)",
+"cl": "Fixed: Move constructor and assignment operator of Triangulation<dim> did not move the data member cell_data_attached_data. This led to failures when trying to use a moved to Triangulation e.g. for refinement. (Alexander Reinhold, 2025/11/07) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19001,
+"date": "2025-11-18",
+"title": "fix Portable::MatrixFree  initilization on mg level",
+"commits": "Fix failing initlization of P::MF for level cells when level != max_level. Provide tests.",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19012,
+"date": "2025-12-17",
+"title": "Add parallel reduction to ROL Wrapper.",
+"commits": "Add parallel reduction to ROL Wrapper.",
+"cl": "Fixed: TrilinosWrappers::ROLVector::reduce() now also works on parallel. (Marc Fehling, 2025/11/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19019,
+"date": "2026-02-05",
+"title": "Implementation of grid uniform_channel_with_sphere",
+"commits": "Fix indentation issues | Corrected type for arg. lengths_heights_widths, removed abs | Correct arguments layout for hyper_cube_with_spherical_hole in dim. 1 and 2 | Unused variables in hyper_cube_with_spherical_hole for dim 1 and 2 commented | Apply formatting fixes | Update grid_generator.h | Add c",
+"cl": "New: The GridGenerator::uniform_channel_with_sphere() function creates the three-dimensional mesh of a channel with a sphere inside. The mesh created is conformal. (Quentin Viville, 2026/01/24) ",
+"newtests": 2,
+"nsrc": 3
+},
+{
+"pr": 19065,
+"date": "2025-12-11",
+"title": "Fix swapped lines in wedges",
+"commits": "fixed test | fix swapped lines in wedges",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19069,
+"date": "2025-12-15",
+"title": "Geometric multigrid transfer: Fix bug of 64 -> 32 bit narrowing",
+"commits": "Geometric multigrid transfer: Fix bug of 64 -> 32 bit narrowing",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19071,
+"date": "2025-12-14",
+"title": "Fix for wrong orientation correction during extraction of new lines created while refining triangular faces as a step to isotopically refine 3d cells.",
+"commits": "fix wrong line extraction table",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19075,
+"date": "2025-12-12",
+"title": "Rename argument, fix grammar.",
+"commits": "Rename argument, fix grammar.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19085,
+"date": "2025-12-17",
+"title": "Add face guess to reference cell",
+"commits": "Fix face guess for 2D mixed meshes",
+"cl": "",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 19086,
+"date": "2026-01-19",
+"title": "Fix neighbor child on subface",
+"commits": "Indent | Test nearly all cases | start adopting test | Add test for all cases | Add test | Fix neighbor child on subface",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19096,
+"date": "2025-12-17",
+"title": "Run pre-commit autoupdate.",
+"commits": "Fix typos. | Run pre-commit autoupdate.",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 19097,
+"date": "2025-12-22",
+"title": "Introduce function that returns an iterator over the face indices of a certain type of a reference cell.",
+"commits": "Apply suggestions https://github.com/dealii/dealii/pull/19097#discussion_r2636340570 https://github.com/dealii/dealii/pull/19097#discussion_r2636344293 | Fixed whitespace issues. | Added function `reference_cell_face_indices_by_type`",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19126,
+"date": "2025-12-23",
+"title": "Fix VTK module",
+"commits": "Fix VTK module",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19127,
+"date": "2025-12-29",
+"title": "Fix Trilinos module with Tpetra",
+"commits": "Fix printing TpetraWrappers::SparsityPattern | Define DEAL_II_TRILINOS_WITH_TPETRA_INST_* | Fix Trilinos module with Tpetra",
+"cl": "",
+"newtests": 0,
+"nsrc": 17
+},
+{
+"pr": 19133,
+"date": "2026-01-26",
+"title": "VTKWrappers utilities -- part V --  GridTools::parallel_to_serial_vertex_indices",
+"commits": "Fix test and apply code review. | Add GridTools::parallel_to_serial_vertex_indices() function and tests",
+"cl": "New: The function GridTools::parallel_to_serial_vertex_indices() returns a vector mapping each vertex of a parallel Triangulation to the corresponding vertex index in the originating serial Triangulation. (Luca Heltai, 2025/12/23) ",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 19137,
+"date": "2025-12-30",
+"title": "Simplify connectivity.h.",
+"commits": "Use standard names for member variables of the CRS class. | Include a header used in this file. | Rename variables. | Insert elements into a vector in bulk. | No need to check a function return -- the function itself checks. | Use correct type. Also be more explicit with types. | Rename function arg",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19142,
+"date": "2025-12-28",
+"title": "Fix two links to compress().",
+"commits": "Fix two links to compress().",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19149,
+"date": "2026-01-11",
+"title": "DataOut: Support non-contiguous distributed vectors via ReadWriteVector",
+"commits": "Small refactoring in response to review comments | Remove extraneous semicolon triggering pedantic warning | DataOut: handle ghosted Trilinos vectors locally | DataOut: handle ghosted Trilinos vectors and fix tidy warnings | Reformat source files using contrib/utilities/indent-all | Fix C++20 module",
+"cl": "DataOut has been generalized to correctly handle parallel vectors with arbitrary ownership layouts, improving robustness and correctness for distributed output. (Mathias Anselmann, 2026/01/11) ",
+"newtests": 1,
+"nsrc": 5
+},
+{
+"pr": 19191,
+"date": "2026-01-21",
+"title": "Extract implementations of the Arkode wrapper and some of its internal classes to template files",
+"commits": "Move includes for instantiations | Fix include guards for modules and indents | Add MPI includes | Add template file for Sundials operator, preconditioner and linear solver | Add template file for Sundials ARKode",
+"cl": "",
+"newtests": 0,
+"nsrc": 8
+},
+{
+"pr": 19210,
+"date": "2026-01-26",
+"title": "`MappingFEField`: `fix get_vertices()`.",
+"commits": "MappingFEField: fix get_vertices().",
+"cl": "Fixed: MappingFEField::get_vertices() correctly works with threads again. (David Wells, 2026/01/25) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19218,
+"date": "2026-03-06",
+"title": "Refactor BlockSparseMatrixEZ to derive from BlockMatrixBase",
+"commits": "provide explicit vector type for reinit method calls instead of initizializer lists | Fix: error in diag_element, no dereferencing of entry for the assignment | Reordering of includes by indent | Make code more clear by explicit use of else | Fix diag_element; update comments | Make code more clear ",
+"cl": "",
+"newtests": 1,
+"nsrc": 4
+},
+{
+"pr": 19221,
+"date": "2026-01-27",
+"title": "Project BC div-conf in 3D: Avoid temp vector of global problem size",
+"commits": "Add changelog | Do not use a temp vector equal to global problem size",
+"cl": "Fixed: The function VectorTools::project_boundary_values_div_conforming() would previously allocate an array of length equal to the global number of degrees of freedom. This is now fixed, making sure that also large-scale parallel programs can fit into memory. (Martin Kronbichler, 2026/01/26) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19225,
+"date": "2026-01-27",
+"title": "Fix TrilinosWrappers::Vector::sadd() when the argument is a vector with ghost entries.",
+"commits": "Add a test. | Fix TrilinosWrappers::Vector::sadd() when the argument is a vector with ghost entries.",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19233,
+"date": "2026-01-28",
+"title": "Fix: Ensure array consistency for auxiliary vectors",
+"commits": "Correcting array consistency",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19235,
+"date": "2026-01-28",
+"title": "compute_nonzero_normal_flux(): fix 64bit issue",
+"commits": "compute_nonzero_normal_flux(): fix 64bit issue",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19236,
+"date": "2026-01-28",
+"title": "ParseConvergenceTable: fix 64bit issue",
+"commits": "ParseConvergenceTable: fix 64bit issue",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19237,
+"date": "2026-01-28",
+"title": "DoFRenumbering: fix 64bit issues",
+"commits": "DoFRenumbering: fix 64bit issues",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19241,
+"date": "2026-01-28",
+"title": "MatrixTools: fix 64bit issues.",
+"commits": "MatrixTools: convert a function pointer to a lambda. | MatrixTools: use global_dof_index where necessary.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19243,
+"date": "2026-01-28",
+"title": "DoFHandler policy: fix 64bit issues.",
+"commits": "DoFHandler policy: use global_dof_index where necessary.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19250,
+"date": "2026-01-29",
+"title": "Workaround bug in hipcc 6.4",
+"commits": "Disable clang-tidy for BarycentricPolynomials destructor | Workaround bug in hipcc 6.4",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19258,
+"date": "2026-02-03",
+"title": "Restrict the argument to IndexSet::subtract_set().",
+"commits": "Copy nonlocal_entries when copying Vector | Only subtract nonlocal_entries if there is a nonlocal_vector | Restrict the argument to IndexSet::subtract_set(). | Fix a test.",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 19263,
+"date": "2026-02-01",
+"title": "Fix line breaks in comments to improve readability.",
+"commits": "Fix line breaks in comments to improve readability.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19270,
+"date": "2026-02-10",
+"title": "Fix using TpetraWrappers::SparseMatrix with non-contributing MPI ranks",
+"commits": "Fix using TpetraWrappers::SparseMatrix with non-contributing MPI ranks",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19279,
+"date": "2026-02-10",
+"title": "Fix deadlock in DataOut if more MPI ranks than cells",
+"commits": "Indent | Do not skip empty blocks | Add tests",
+"cl": "",
+"newtests": 3,
+"nsrc": 1
+},
+{
+"pr": 19283,
+"date": "2026-02-12",
+"title": "Fix condition for line identity",
+"commits": "Fix condition for line identity",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19290,
+"date": "2026-02-16",
+"title": "Fix TpetraWrappers::locally_owned_elements",
+"commits": "Store locally owned elements instead | Fix TpetraWrappers::locally_owned_elements",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19294,
+"date": "2026-02-15",
+"title": "Fix bug FEPointEvaluation for certain geometries",
+"commits": "Changelog | New test case | Fix bug FEPointEvaluation for certain geometries",
+"cl": "Fixed: FEPointEvaluation::get_gradient() would return wrong results if a mesh consisted of both non-affine and affine elements and several points were evaluated on the cells of affine shape. This also affected the step-19 tutorial program. This is now fixed. (Martin Kronbichler, Zden\u011bk Bonaventura, 2026/02/13) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19309,
+"date": "2026-02-20",
+"title": "Correct name of Wielandt.",
+"commits": "Correct name of Wielandt.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19317,
+"date": "2026-02-21",
+"title": "Tpetra: Fix const correctness for MueLu preconditioner",
+"commits": "Copy parameter list | Tpetra: Instantiate MueLu for MemorySpace::Default | Add a comment | Tpetra: Fix const correctness for MueLu preconditioner",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 19327,
+"date": "2026-02-25",
+"title": "Optimize InterpolatedUniformGridData delta_x (Fix #19303)",
+"commits": "Optimize InterpolatedUniformGridData delta_x (Fix #19303)",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19328,
+"date": "2026-02-25",
+"title": "Fix memory leak in NonMatching::MappingInfo",
+"commits": "Fix memory leak in NonMatching::MappingInfo",
+"cl": "Fixed: NonMatching::MappingInfo::reinit() would leak a small amount of memory in each call. This is now fixed. This indirectly affects the usage of FEPointEvaluation. (Timo Heister, 2026/02/24) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19329,
+"date": "2026-05-05",
+"title": "Use unpreconditioned norm in petsc ksp",
+"commits": "Use unpreconditioned norm in petsc ksp",
+"cl": "Fixed: When using the PETSc solver through PETScWrappers, the original code will use the l2 norm of the preconditioned residual. This is not consistent with deal.II expectations and example usage. This PR fixes the issue by using the unpreconditioned residual norm. (Yiliang Wang, 2026/03/05) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19341,
+"date": "2026-02-28",
+"title": "Make AlignedVector::replicate_across_communicator() more able to deal with big tables.",
+"commits": "Add a changelog entry. | Make AlignedVector::replicate_across_communicator() more able to deal with big tables.",
+"cl": "Fixed: The function AlignedVector::replicate_across_communicator() could not deal with tables that took up more than about 2GB because of an integer overflow. This is now fixed. (Wolfgang Bangerth, 2026/02/25) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19356,
+"date": "2026-06-07",
+"title": "Distributed PSBLAS matrices and sparsity patterns",
+"commits": "Apply review | Add support for PSBLAS sparse matrices. Add tests | Fix configure file for PSBLAS",
+"cl": "",
+"newtests": 4,
+"nsrc": 10
+},
+{
+"pr": 19381,
+"date": "2026-04-01",
+"title": "Prepare for pyramid refinement and allow for cells to have children of different referenc cells.",
+"commits": "extract magic numbers to make their impact more visible. Combine two for loops into one. Fix missing constexpr in ReferenceCell.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19388,
+"date": "2026-03-19",
+"title": "Allow configuring with Trilinos 17",
+"commits": "Fix up compatibility | Fix up detection | Compatibility with Trilinos earlier than 16.2.0 | Move up Tpetra check | Make MueLu optional | Revert \"Adjust test output for master\" | Require that Tpetra or Epetra are found | Adjust test output for master | Fix tests | Fix doxygen | Require Epetra or Tpet",
+"cl": "",
+"newtests": 0,
+"nsrc": 52
+},
+{
+"pr": 19398,
+"date": "2026-09-22",
+"title": "Add PSBLAS AMG preconditioners",
+"commits": "Remove distinction between smoother degree and smoother sweeps, following Trilinos interface. | Add interface to AMG4PSBLAS preconditioners and a test for library detection | Fix detection on Mac",
+"cl": "New: Add new preconditioner class, PSCToolkitWrappers::PreconditionAMG, which adds a wrapper for the AMG preconditioner(s) provided by AMG4PSBLAS. (Marco Feder, 2026/06/26) ",
+"newtests": 2,
+"nsrc": 9
+},
+{
+"pr": 19399,
+"date": "2026-03-15",
+"title": "AlignedVector: correctly handle non-trivial types.",
+"commits": "AlignedVector: correctly handle non-trivial types.",
+"cl": "Fixed: Deserialization of an AlignedVector now works correctly with types which are not trivially copyable. (David Wells, 2206/03/15) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19414,
+"date": "2026-03-18",
+"title": "Fix AlignedVector::load() for empty vectors.",
+"commits": "Add a changelog entry. | Add a test. | Fix AlignedVector::load() for empty vectors.",
+"cl": "Fixed: The function AlignedVector::load() function did not work correctly if the AlignedVector object on which it was called had non-zero size and the object being deserialized had zero size. (Wolfgang Bangerth, 2026/03/18) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19421,
+"date": "2026-03-20",
+"title": "Do not store old cell in MappingQ and MappingFE",
+"commits": "Changelog | New test cases | Do not try to keep mapping support points around",
+"cl": "Fixed: If FEFaceValues::reinit() and FESubfaceValues::reinit() were used on objects that remained valid after a change in the triangulation and used the same cell, they could sometimes produce wrong results for the metric terms. This is now fixed. (Martin Kronbichler, 2026/03/19) ",
+"newtests": 1,
+"nsrc": 4
+},
+{
+"pr": 19423,
+"date": "2026-04-02",
+"title": "Make TrilinosWrappers an alias for TpetraWrappers without Epetra",
+"commits": "Fix typos | More header guards | Add changelog entry | Don't allow using TpetraWrappers::Vector with TrilinosWrappers::SparseMatrix if both Epetra and Tpetra are enabled | Make TrilinosWrappers an alias for TpetraWrappers without Epetra",
+"cl": "Changed: If Trilinos was built with Tpetra support but without Epetra support, the TrilinosWrappers classes are aliases for the respective TpetraWrappers classes with NumberType=double and MemorySpace=Host. (Daniel Arndt, 2026/03/21) ",
+"newtests": 0,
+"nsrc": 22
+},
+{
+"pr": 19425,
+"date": "2026-03-21",
+"title": "TpetraWrappers::SparseMatrix: implement l1_norm and linfty_norm",
+"commits": "Remove redundant header, improve formatting | Fix indentation | TpetraWrappers::SparseMatrix: implement l1_norm and linfty_norm",
+"cl": "",
+"newtests": 2,
+"nsrc": 2
+},
+{
+"pr": 19442,
+"date": "2026-03-25",
+"title": "Fix face_to_cell_line_orientation for wedge - basic infrastructure",
+"commits": "Fix face_to_cell_line_orientation for wedge - basic infrastructure",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19457,
+"date": "2026-03-28",
+"title": "TpetraWrappers::SparseMatrix: Fix Tvmult",
+"commits": "TpetraWrappers::SparseMatrix: Fix Tvmult",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19465,
+"date": "2026-03-30",
+"title": "FEEvaluation: Initialize all pointers for slow initialization case",
+"commits": "Changelog | New test case | Make sure to set points for quadrature weights",
+"cl": "Fixed: Initializing FEEvaluation with a Mapping, FiniteElement, and Quadrature object would leave some data pointers unset, leading to problems e.g. when evaluating elements of type FE_RaviartThomasNodal. This is now fixed. (Martin Kronbichler, 2026/03/30) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19468,
+"date": "2026-04-02",
+"title": "Generalize local_size test and fix TpetraWrappers::locally_owned_size()",
+"commits": "Create empty IndexSet with the correct size | Generalize local_size test",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19472,
+"date": "2026-04-18",
+"title": "FESubfaceValues: Fix assertion for DoF cell iterator type",
+"commits": "Add changelog | Update test output | FESubfaceValues: Fix assertion for DoF cell iterator type",
+"cl": "Changed: FESubfaceValues::reinit() now checks whether the face under consideration actually belongs to a cell whose neighbor is more refined. This was previously only enforced on cell iterators based on a Triangulation object, not those associated to a DoFHandler object. The new behavior is now uniform in both cases. (Martin Kronbichler, 2026/04/17) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19482,
+"date": "2026-04-07",
+"title": "Make the curl in 2d an actual scalar.",
+"commits": "Add a changelog entry about fixing a bug. | Add a changelog. | Make the curl in 2d a true scalar. | Avoid using 'scalar_product' in favor of 'operator*'.",
+"cl": "Changed: In three space dimensions, the curl of a vector field is unambiguously a three-dimensional vector. In two space dimensions, it is typically defined as a scalar, interpreted as the magnitude of a vector aligned with the $z$-axis the results from taking the curl of a vector field that lives in the $x-y$ plane. For historical reasons, deal.II used to represent this scalar as a Tensor<1,1> (i.e., a tensor of rank one -- a tensor with one index -- for which the only possible value of the index is zero). This is, of course, entirely equivalent to it being a scalar, but it is semantically wrong: The data type should have been a scalar, not an array of which one can take the zeroth element.",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 19491,
+"date": "2026-04-07",
+"title": "Fix 2d curl computation in FEPointEvaluation",
+"commits": "Fix 2d curl computation in FEPointEvaluation",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19497,
+"date": "2026-04-10",
+"title": "Fix issues in Tpetrawrappers::Vector::compress()",
+"commits": "Ignore non-local inserts | Add tests | Fix deadlock in compress()",
+"cl": "",
+"newtests": 5,
+"nsrc": 1
+},
+{
+"pr": 19519,
+"date": "2026-04-15",
+"title": "Disallow the use of CurlType for anything other than 2d and 3d.",
+"commits": "Fix the date in a changelog. | Adjust test. | Add a changelog entry. | Disallow the use of CurlType for anything other than 2d and 3d.",
+"cl": "Changed: There are some functions in deal.II that compute the curl of vector fields. The curl is only defined for vector fields in ${\\mathbb R}^3$, or for two-dimensional vector fields on two-dimensional manifolds (perhaps embedded in ${\\mathbb R}^3$). Historically, it was possible to also call these functions for `dim==1`, which made no sense but was syntactically allowed. However, this is now forbidden and will lead to syntax errors. (Wolfgang Bangerth, 2026/04/13) ",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 19531,
+"date": "2026-04-16",
+"title": "Fix an #include statement.",
+"commits": "Fix an #include statement.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19544,
+"date": "2026-05-05",
+"title": "Improve timer implementation",
+"commits": "Changelog TimerOutput::print_wall_time_statistics() | Improve TimerOutput documentation | Make optional mpi comm implementation more explicit | Add TimerOutput test for unvisited sections | Allow ranks to not visit sections for timer output",
+"cl": "Fixed: TimerOutput::print_wall_time_statistics() no longer requires all processes to enter the same sections when the TimerOutput is constructed without an MPI communicator. Sections that are not entered on a process are now reported with zero timing. Previously, this could trigger an assertion or lead to a deadlock. (Torsten Schmid, 2026/04/20) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 19581,
+"date": "2026-04-28",
+"title": "Fix Tpetra vector swap and assignment.",
+"commits": "Fix Tpetra vector swap and assignment.",
+"cl": "",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 19590,
+"date": "2026-04-30",
+"title": "[ARKODE] Rename `ARKStepper::mass_times_setup` `ARKStepper::mass_times_vector_setup` and fix user data in `ARKStepSetMassTimes`",
+"commits": "Fix user data in the call to ARKStepSetMassTimes() | Rename ARKStepper::mass_times_setup to ARKStepper::mass_times_vector_setup",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 19596,
+"date": "2026-04-30",
+"title": "Fix GridGenerator::cheese() in 3d.",
+"commits": "Add a changelog entry. | Fix GridGenerator::cheese() in 3d.",
+"cl": "Fixed: Despite its name, the GridGenerator::cheese() function in 3d did not actually create any holes. It just produced a solid volume. This is now fixed. (Wolfgang Bangerth, 2026/04/28) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19602,
+"date": "2026-04-30",
+"title": "Small allocation improvements",
+"commits": "FEEvaluationData: don't clear an array in debug mode. | DoFAccessor: use boost::small_vector. | make_hp_hanging_node_constraints(): avoid creating duplicate sets.",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 19628,
+"date": "2026-05-05",
+"title": "Fix extract_boundary_mesh for 3D simplex meshes",
+"commits": "Add test about orientation | Review. | Add 3D simplex mesh test for extract_boundary_mesh | Extend extract_boundary_mesh to 3D simplex meshes",
+"cl": "",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 19655,
+"date": "2026-05-07",
+"title": "Fix CGAL source files for modules",
+"commits": "Fix CGAL source files for modules",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 19668,
+"date": "2026-05-11",
+"title": "Arbitrary order support points for simplices",
+"commits": "Fix typo | Simplex support points for higher order",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19677,
+"date": "2026-05-28",
+"title": "Improve checking for errors.",
+"commits": "Add a changelog entry. | Split the constructor of FEFieldFunction. | Improve checking for errors.",
+"cl": "Fixed: The default mapping provided to FEFieldFunction only worked for hypercube meshes. This is now fixed by introducing a second constructor that determines what the appropriate linear mapping for a given mesh is, and then using this mapping. (Wolfgang Bangerth, Sam Scheuerman, David Wells, 2026/05/12) ",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 19690,
+"date": "2026-05-14",
+"title": "Add getters and setters to TriaFaces.",
+"commits": "Triangulation: use correct integer types. | TriaAccessor: fix a return type. | TriaFaces: add getters and setters for line orientations. | TriaFaces: rename a stride. | TriaFaces: make a variable private. | TriaFaces: use int for face indices.",
+"cl": "",
+"newtests": 0,
+"nsrc": 4
+},
+{
+"pr": 19708,
+"date": "2026-06-22",
+"title": "Fix support contained within without constraints",
+"commits": "Fix support contained within without constraints",
+"cl": "",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 19710,
+"date": "2026-05-20",
+"title": "Fix: w- and f-cycle",
+"commits": "Fix: w- and f-cycle",
+"cl": "Fixed: Fix multigrid W- and F-cycles. Previously, intermediate solutions were overwritten between cycles, effectively resulting in a V-cycle. (Peter Munch, 2026/05/18) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 19726,
+"date": "2026-05-22",
+"title": "Do not use A.residual() in SolverFIRE.",
+"commits": "Add a changelog. | Do not use A.residual() in SolverFIRE.",
+"cl": "Fixed: The SolverFIRE class assumed that the matrix object has a `residual()` function, but this function is not part of the required interface for all matrix types that can be passed to linear solvers. This is now fixed by instead relying on `vmult()` functionality. (Wolfgang Bangerth, 2026/05/21) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19732,
+"date": "2026-05-22",
+"title": "Fix bug in FEEvaluation::distribute_local_to_global",
+"commits": "Changelog | New test case | Fix bug in FEEvaluation::distribute_local_to_global",
+"cl": "Fixed: FEEvaluation::distribute_local_to_global() would produce a segmentation fault if initialized with DoFHandler::active_cell_iterator and used with LinearAlgebra::distributed::Vector. This is now fixed. (Martin Kronbichler, 2026/05/22) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19733,
+"date": "2026-05-23",
+"title": "Fix Tpetra sparse matrix wont compress if one rank doesnt own entries",
+"commits": "compress even when some ranks dont own entries | Add test",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19749,
+"date": "2026-05-24",
+"title": "Use correct condition within for loop when iterating over children.",
+"commits": "fix for range to iterate over actual number of children.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19751,
+"date": "2026-05-25",
+"title": "CellId: fix some types.",
+"commits": "CellId: Prefer std::uint8_t to char. | CellId: make n_child_indices a uint8_t.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19767,
+"date": "2026-05-27",
+"title": "Fix assert for Trilinos pre 14",
+"commits": "Fix assert for trilinos pre 14",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19769,
+"date": "2026-05-27",
+"title": "CellData: use std_cxx26::inplace_vector.",
+"commits": "CellData: use std_cxx26::inplace_vector. | inplace_vector: serialize with array_wrapper. | CGAL: fix some clang-tidy issues.",
+"cl": "Changed: CellData::vertices is now a std_cxx26::inplace_vector instead of a `std::vector`. This change was made to improve performance and decrease the total number of memory allocations, as the maximum number of vertices per cell is known at compile time. Some code, like assigning `vertices` to a `std::vector`, will no longer compile, but most constructions (like the `assign()` member function, assigning to a `std::initializer_list`, etc.) will continue to work. In particular, pre-2021 code (before we switched to `std::vector` from a C array) will not require updates. (David Wells, 2026/05/26) ",
+"newtests": 0,
+"nsrc": 6
+},
+{
+"pr": 19784,
+"date": "2026-06-11",
+"title": "Base & Tests: Implement and verify fixed-step and embedded Tsitouras 5(4)",
+"commits": "Add doc and minor fixes | Apply clang-format fixes | Added inline function to get coefficients | Base & Tests: Implement and verify fixed-step and embedded Tsitouras 5(4) method",
+"cl": "New: Extended the TimeStepping namespace by the adaptive Tsitouras 5(4) explicit Runge-Kutta method (TimeStepping::TSITOURAS5). (Jalil Khan, 2026/06/06) ",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19791,
+"date": "2026-06-03",
+"title": "Fix placement of `n_reference_cells_in_dim` and add `inline` specifier.",
+"commits": "fixed placement within file and add inlinie.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19807,
+"date": "2026-06-04",
+"title": "KellyErrorEstimator: fix a type.",
+"commits": "KellyErrorEstimator: fix a type.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19838,
+"date": "2026-06-10",
+"title": "Arkode: fix return codes for arkode_linsol_solve() and restructure test arkode_11",
+"commits": "Add SUNLS_PSOLVE_FAIL_REC and SUNLS_PSOLVE_FAIL_UNREC to module | Restructure test arkode_11 to demonstrate recovery after throwing an exception | Fix return codes of `call_and_possibly_capture_exception()`",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19839,
+"date": "2026-06-15",
+"title": "Avoid some static variables.",
+"commits": "ReferenceCell: make some more arrays constexpr. | GridIn: avoid some static arrays. | p::d::T: use the real class member instead of a static vector. | Triangulation: add a FlatManifold member. | Triangulation: fix some small move ctor bugs.",
+"cl": "",
+"newtests": 0,
+"nsrc": 5
+},
+{
+"pr": 19841,
+"date": "2026-06-22",
+"title": "Add constant mode extraction to Tpetra MueLu",
+"commits": "Fix typo | Add constant modes to Tpetra MueLu",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19843,
+"date": "2026-06-11",
+"title": "fix latex formula issues",
+"commits": "fix latex formula issues",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19844,
+"date": "2026-06-11",
+"title": "Only keep Tpetra vector view as long as necessary",
+"commits": "Fix typo | Improve documentation. Remove unrelated asserts. | Fix tests | Free cached vector view wherever necessary | Only keep Tpetra vector view as long as necessary",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 19870,
+"date": "2026-06-15",
+"title": "Fix calling TpetrWrappers::vmult with dealii::Vector arguments",
+"commits": "Fix calling TpetrWrappers::vmult with dealii::Vector arguments",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19871,
+"date": "2026-08-28",
+"title": "PreconditionChebyshev: Add ability to compute residual norm",
+"commits": "Fixup | Changelog | Add test case | PreconditionChebyshev: Add ability to compute residual norm",
+"cl": "New: There are two new functions, PreconditionChebyshev::vmult_with_last_residual_norm() and PreconditionChebyshev::step_with_last_residual_norm() that, as a byproduct of the last iteration step in the respective PreconditionChebyshev::vmult() and PreconditionChebyshev::step(), also compute the norm of the residual appearing in that step. While this quantity is not the final residual after completion of the respective operation, the new option nonetheless gives the order-of-magnitude of the error remaining after the Chebyshev iteration without requiring an additional matrix-vector product. (Martin Kronbichler, 2026/08/18) New: The function PreconditionChebyshev::set_degree() allows to change",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 19880,
+"date": "2026-06-15",
+"title": "Fix vectorized_load_and_transpose for AVX/AVX-512",
+"commits": "Fix vectorized_load_and_transpose for AVX/AVX-512",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19895,
+"date": "2026-10-12",
+"title": "Add additive Schwarz preconditioner(s) from PETSc",
+"commits": "Update PETSc modules to support PCASM | Allow patches to be given as AdditionalData | Fix description of test | PETSc ASM preconditioner",
+"cl": "",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 19896,
+"date": "2026-06-17",
+"title": "Fix 1D path of interpolate_boundary_values() for hp::DoFHandler",
+"commits": "Fix 1D path of interpolate_boundary_values() for hp::DoFHandler",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19898,
+"date": "2026-06-18",
+"title": "Fix initialization of hessians_quad_submitted in FEEvaluationData",
+"commits": "Fix initialization of hessians_quad_submitted in FEEvaluationData.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19919,
+"date": "2026-06-24",
+"title": "Fix dofs support contained within with constraints",
+"commits": "Changelog extract_dofs_with_support_contained_within() | Fix support contained within with constraints",
+"cl": "Fixed: DoFTools::extract_dofs_with_support_contained_within() previously returned DoFs as contained within when running in parallel that are actually not contained within. (Torsten Schmid, 2026/06/23) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 19922,
+"date": "2026-06-23",
+"title": "Don't mark functions in anonymous spaces as inline.",
+"commits": "Don't mark functions in anonymous spaces as inline. | Mark a function which is only used in debug mode as [[maybe_unused]].",
+"cl": "",
+"newtests": 0,
+"nsrc": 15
+},
+{
+"pr": 19951,
+"date": "2026-06-30",
+"title": "Fix copy assignment (PSBLAS interface)",
+"commits": "Fix copy in PSBLAS vector interface",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19956,
+"date": "2026-06-29",
+"title": "SparseDirectMUMPS: fix 64-bit indices and Epetra.",
+"commits": "SparseDirectMUMPS: fix 64-bit indices and Epetra.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19969,
+"date": "2026-07-01",
+"title": "SolverGMRES with delayed re-orthogonalization: Fix lucky breakdown",
+"commits": "Changelog | SolverGMRES with delayed re-orthogonalization: Fix lucky breakdown",
+"cl": "Fixed: SolverGMRES and SolverFGMRES with orthogonalization strategy LinearAlgebra::OrthogonalizationStrategy::delayed_classical_gram_schmidt (the default case) could run into a division by zero in the rare case when residual vectors became exactly zero. This invalid operation is now avoided, and the lucky breakdown is handled gracefully. (Martin Kronbichler, 2026/06/30) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19987,
+"date": "2026-07-02",
+"title": "Fix an out-of-bounds access in MatrixFree face mapping initialization",
+"commits": "Fix an out-of-bounds access in MatrixFree face mapping initialization",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19990,
+"date": "2026-07-02",
+"title": "Fix two minor issues with our new Frosch wrappers.",
+"commits": "Xpetra: fix some headers. | Frosch: rename the test output to correctly mark its dependencies.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 19998,
+"date": "2026-07-25",
+"title": "Fix some issues with the Abaqus-to-UCD conversion, part 1.",
+"commits": "Fix some issues with the Abaqus-to-UCD conversion, part 1.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20000,
+"date": "2026-07-03",
+"title": "Fix an error message string.",
+"commits": "Fix an error message string.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20002,
+"date": "2026-11-04",
+"title": "Allow reading mesh files with DOS line endings.",
+"commits": "Allow reading mesh files with DOS line endings",
+"cl": "Fixed: The Abaqus file format reader in GridIn::read_abaqus() got itself into all sorts of troubles when reading files that had DOS/Windows line endings, producing error messages that did not at all help in diagnosing the underlying cause. This has now been fixed: The reader can deal with such files without errors now. (Wolfgang Bangerth, Dongchen Li, 2026/07/04) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20037,
+"date": "2026-08-20",
+"title": "Make sure we actually call the function we always intended to call.",
+"commits": "Add a changelog entry. | Make sure we actually call the function we always intended to call.",
+"cl": "Fixed: The Triangulation class had code that checks that a mesh after mesh refinement does not have cells that are distorted (e.g., inside-out). Such distorted cells typically happen when the new point in the middle of a boundary edge is placed too far inside its adjacent cell, for example because the boundary has a lot of curvature. This check, however, was lost in a refactoring step many years ago and was no longer run. This is now fixed. (Wolfgang Bangerth, 2026/08/12) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20038,
+"date": "2026-07-11",
+"title": "Fix out of bounds writes for gmsh files with misleading vertex counts",
+"commits": "Fix out of bounds writes for gmsh files with inaccurate headers",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20045,
+"date": "2026-07-21",
+"title": "TriangulationDescription: store material ids of cells.",
+"commits": "TriangulationDescription: store material ids of cells.",
+"cl": "Fixed: TriangulationDescription::Description now correctly sets material_ids of cells on finer levels. (David Wells, 2026/07/13) ",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 20049,
+"date": "2026-09-20",
+"title": "Fix potential out of bounds array access inside grid_in relating to dimEntity reads",
+"commits": "Fix potential out of bounds array access inside grid_in relating to dimEntity reads",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20054,
+"date": "2026-09-08",
+"title": "Add codimension-one support to FE_RaviartThomasNodal",
+"commits": "Added missing blank line to expected test output | Fixed indentation | Add codimension-one support to FE_RaviartThomasNodal | Support codimension-one case in FE_PolyTensor | Fix FEValuesViews::Vector for non-primitive elements on codim-1 meshes",
+"cl": "Fixed: FEValuesViews::Vector now correctly returns all spacedim components of the value, gradient, divergence, Hessian, third derivative and symmetric gradient for non-primitive vector elements on codimension-one meshes (dim &lt; spacedim). The non-primitive branch previously only looped over the first dim components and dropped the remaining ones. (Jakob Tore Kammeyer Nielsen, 2026/06/24) New: FE_PolyTensor now supports the codimension-one case (dim &lt; spacedim). The internal computation of mapped shape gradients and Hessians, which is stored using DerivativeForm objects, is guarded so that the reference-cell polynomial gradients and Hessians are copied row by row when dim != spacedim ins",
+"newtests": 2,
+"nsrc": 9
+},
+{
+"pr": 20061,
+"date": "2026-07-21",
+"title": "FEValues: invalidate the cell iterator whenever the Triangulation changes in any way.",
+"commits": "FEValuesBase: try to detect dead Triangulations. | FEValuesBase: simplify and correct connections.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 20067,
+"date": "2026-07-22",
+"title": "Fix a @ref statement.",
+"commits": "Fix a @ref statement.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20074,
+"date": "2026-07-24",
+"title": "Fix: newline bug in break_text_into_lines",
+"commits": "simplify code and add to test | Fix: newline bug in break_text_into_lines",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20080,
+"date": "2026-07-23",
+"title": "Fix a wrong word.",
+"commits": "Fix a wrong word.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20128,
+"date": "2026-08-11",
+"title": "Use an inplace_vector of the correct size.",
+"commits": "Use an inplace_vector of the correct size.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20154,
+"date": "2026-08-20",
+"title": "Fix Portable integration kernels for dim==1",
+"commits": "add test solving 1D Laplace problem | Fix Portable integration kernels for dim==1",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20155,
+"date": "2026-08-27",
+"title": "read_partitioned_msh: fix material ids.",
+"commits": "read_partitioned_msh: fix material ids.",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 20165,
+"date": "2026-08-25",
+"title": "Fix broken explicit instantiations in trilinos_tpetra_precondition_frosch.cc",
+"commits": "Fix broken explicit instantiations in trilinos_tpetra_precondition_frosch.cc",
+"cl": "Fixed: The explicit instantiations of LinearAlgebra::TpetraWrappers::PreconditionFROSch::initialize() for the float scalar type declared a non-const DoFHandler argument and therefore did not match the declaration, and one instantiation in the complex-double block was malformed. As a consequence deal.II failed to compile against a Trilinos configured with Tpetra_INST_FLOAT=ON and ShyLU_DDFROSch. (Ernesto Ismail, 2026/08/25) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20166,
+"date": "2026-08-25",
+"title": "Add missing Number() cast in the ReadWriteVector min branch",
+"commits": "Add missing Number() cast in the ReadWriteVector min branch",
+"cl": "Fixed: When importing a Tpetra vector with VectorOperation::min, ReadWriteVector assigned the value from the Kokkos view without converting it to the vector's number type, unlike the surrounding insert, add and max branches. This made deal.II fail to compile whenever the Kokkos scalar type differed from the ReadWriteVector number type. (Ernesto Ismail, 2026/08/25) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20168,
+"date": "2026-08-26",
+"title": "Use the matrix and vector scalar type in MatrixScaling",
+"commits": "Use the matrix and vector scalar type in MatrixScaling",
+"cl": "Fixed: MatrixScaling assumed that the scalar type of a distributed matrix or vector is double. As a consequence deal.II failed to compile against a PETSc configured with complex scalars, because PetscScalar is then std::complex<double>. The arrays passed to the matrix and vector set() functions now use the scalar type of the matrix and vector respectively. (Ernesto Ismail, 2026/08/25) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20172,
+"date": "2026-09-21",
+"title": "Guard TpetraWrappers::Vector::min() with if constexpr",
+"commits": "Guard TpetraWrappers::Vector::min() with if constexpr",
+"cl": "Fixed: LinearAlgebra::TpetraWrappers::Vector::min() guarded complex number types with a run-time assertion, but its body still had to compile for every instantiated type and used operator< as well as std::numeric_limits::max(), neither of which is defined for complex numbers. The body is now guarded with if constexpr, so that deal.II can be compiled against a Trilinos providing complex Tpetra instantiations. (Ernesto Ismail, 2026/08/26) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20175,
+"date": "2026-08-28",
+"title": "Specify template parameter in Utilities::fixed_power recursion.",
+"commits": "Specify template parameter in Utilities::fixed_power recursion.",
+"cl": "Fixed: The recursion in Utilities::fixed_power now explicitly specifies the template parameter for the value type. Previously, template argument deduction failed during compilation for data types enabling automatic differentiation. (Marc Fehling, 2026/08/26) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20191,
+"date": "2026-09-01",
+"title": "Fix a wrong dimension.",
+"commits": "Fix a wrong dimension.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20192,
+"date": "2026-09-04",
+"title": "Skip artificial cell when sorting particles",
+"commits": "Add a unit test | Indent | Skip artificial cell when sorting particles",
+"cl": "Fixed: Particles::ParticleHandler::sort_particles_into_subdomains_and_cells() also searched artificial cells when looking for the new cell of a particle. A particle found in such a cell was then scheduled to be sent to numbers::artificial_subdomain_id, which triggered an assertion in debug mode and silently deleted the particle in release mode without emitting the particle_lost signal. Artificial cells are now skipped, so that these particles are correctly reported as lost. This behavior is checked by the new test particles/particle_handler_sort_03. (Bruno Blais, 2026/08/31) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20213,
+"date": "2026-10-12",
+"title": "Support OpenCASCADE 8.0.0 and remove all Handle() instances.",
+"commits": "Replaced leftover Handle() instances with opencascade::handle<>. Removing OpenCASCADE version checks <7.0.0 and relevant execution paths. Added hard splits at OCC 7.0.0 changes. Exporting opencascade::handle from open cascade as opencascade::handle in opencasccade.ccm. Added export of Adaptor3d_Curv",
+"cl": "",
+"newtests": 0,
+"nsrc": 3
+},
+{
+"pr": 20215,
+"date": "2026-10-01",
+"title": "Implement gradient transforms in MappingFEField",
+"commits": "Run deal.II indentation script | As requested, I added a test to verify the MappingFEField gradient transform implementations by comparing them with MappingQ for a translated FE field in 2D and 3D. Using a nontrivial affine geometry, and therefore a non-identity Jacobian, exposed an ordering error i",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20220,
+"date": "2026-09-18",
+"title": "Fix one ghosted Tpetra vector constructor",
+"commits": "Fix one Tpetra ghosted vector constructor",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20229,
+"date": "2026-09-29",
+"title": "Fix column maps of rectangular and/or parallel Tpetra sparsity patterns",
+"commits": "Fix column maps of Tpetra matrices",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20230,
+"date": "2026-09-22",
+"title": "Fix a comment to American English.",
+"commits": "Fix a comment to American English.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20233,
+"date": "2026-09-28",
+"title": "Rework element insertion and assembly in PSBLAS vectors",
+"commits": "Fix element insertion, assembly and reinit in PSCToolkitWrappers::Vector",
+"cl": "",
+"newtests": 2,
+"nsrc": 2
+},
+{
+"pr": 20246,
+"date": "2026-09-29",
+"title": "Fix TpetraWrappers::SparseMatrix::copy_from() column map in MPI parallel runs",
+"commits": "Add test | Fix TpetraWrappers:SparseMatrix::copy_from column map",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20248,
+"date": "2026-09-30",
+"title": "Fix missing MPI communicator in Tpetra to deal.II vector copy",
+"commits": "Fix missing MPI communicator argument",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20249,
+"date": "2026-09-30",
+"title": "Fix Tpetra::SparsityPattern nonlocal graph",
+"commits": "Fix Tpetra::SparsityPattern nonlocal graph",
+"cl": "",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20251,
+"date": "2026-10-02",
+"title": "SparsityPattern: avoid quadratic complexity in Cuthill McKee algorithm",
+"commits": "add changelog entry | SparsityTools::reorder_Cuthill_McKee(): fix quadratic complexity",
+"cl": "Fixed: SparsityTools::reorder_Cuthill_McKee() and therefore DoFRenumbering::Cuthill_McKee() had an accidental quadratic complexity in the number of connected components of the graph. This led to a severe slowdown for block-diagonal sparsity patterns, for example for discontinuous elements without flux couplings. This has been fixed. (Matthias Maier, 2026/10/02) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20252,
+"date": "2026-10-02",
+"title": "parallel::TriangulationBase::communicate_locally_moved_vertices(): fix stale vertex positions in ghost layer",
+"commits": "add a doc/news/changes entry | test mpi/communicate_moved_vertices_04: add a test checking ghost layer | test mpi/distort_random_02: update test output | parallel::TriangulationBase: fix stale ghost vertices in communicate_locally_moved_vertices()",
+"cl": "Fixed: parallel::TriangulationBase::communicate_locally_moved_vertices() could leave stale vertex positions on ghost cells that do not neighbor any cell of the owner of the moved vertex. (Matthias Maier, 2026/10/02) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20256,
+"date": "2026-10-05",
+"title": "MappingFE: fix a comment.",
+"commits": "MappingFE: fix a comment.",
+"cl": "",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20263,
+"date": "2026-10-10",
+"title": "MatrixFree: Make sure to run the compress_finish at the right instant",
+"commits": "MatrixFree: adding unit test for explicit matrix free with block vectors | Changelog | MatrixFree: Make sure to run the compress_finish at the right instant",
+"cl": "Fixed: When running MatrixFree::cell_loop() with BlockVector types and more than 20 components, the setting to zero out vectors would yield wrong results. This is now fixed. (Jason Landini, Timo Heister, Martin Kronbichler, 2026/10/09) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20286,
+"date": "2026-10-18",
+"title": "Implement ARKode resize feature",
+"commits": "Fix unused variable warning for ERKStepper::resize() | Extract STS PowerMethod estimator duplicating code to a member method | Add using declarations to Sundials module | Add tests to check resize feature of ARKode | Add resize feature to ARKode solver",
+"cl": "",
+"newtests": 4,
+"nsrc": 4
+},
+{
+"pr": 20299,
+"date": "2026-10-20",
+"title": "Fix three-dimensional Nedelec interpolation",
+"commits": "Fix three-dimensional Nedelec interpolation",
+"cl": "Fixed: FE_Nedelec interpolation in three dimensions now uses the support points of each face and correctly subtracts boundary contributions and orders interior coefficients. In particular, higher-order tensor-product polynomials from the finite element space are now reproduced by interpolation. (Luca Heltai, 2026/10/18) ",
+"newtests": 0,
+"nsrc": 1
+},
+{
+"pr": 20303,
+"date": "2026-10-20",
+"title": "Assert the supported triangulation for boundary projection",
+"commits": "Format distributed boundary projection assertion | Use a Debug assertion for unsupported distributed boundary projection | Reject unsupported distributed boundary projection",
+"cl": "",
+"newtests": 0,
+"nsrc": 2
+},
+{
+"pr": 20307,
+"date": "2026-10-19",
+"title": "Fix SUNDIALS vector minimum on empty MPI ranks",
+"commits": "Fix SUNDIALS vector minimum on empty MPI ranks",
+"cl": "Fixed: SUNDIALS vector minimum operations now handle MPI ranks with no locally owned entries. This avoids invalid vector accesses during IDA consistent initialization on meshes with empty partitions. (Luca Heltai, 2026/10/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20312,
+"date": "2026-10-27",
+"title": "Make PETSc MUMPS factorization reuse explicit",
+"commits": "Make PETSc MUMPS factorization reuse explicit",
+"cl": "Fixed: PETScWrappers::SparseDirectMUMPS::solve(A, x, b) now always factorizes the supplied matrix. Use initialize(A) followed by solve(x, b) to reuse a factorization for multiple right-hand sides. (Luca Heltai, 2026/10/20) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 20324,
+"date": "2026-10-28",
+"title": "Clean up properly solvers for ARKStepper on reinit()",
+"commits": "Add SundialsTraits concept | Fix code format, missing headers and module | Introduce SundialsHandle to manage lifetime of underlying solvers | Clean up properly solvers for ARKStepper on reinit()",
+"cl": "",
+"newtests": 0,
+"nsrc": 8
+},
+{
+"pr": 20325,
+"date": "2026-10-25",
+"title": "support SolverIDR on GPUs",
+"commits": "add Random to Kokkos module | support SolverIDR on GPUs",
+"cl": "Fixed: SolverIDR now initializes its random subspace vectors with Kokkos kernels when using vectors in MemorySpace::Default. This also supports block vectors. (Timo Heister, 2026/10/23) ",
+"newtests": 2,
+"nsrc": 1
+},
+{
+"pr": 20333,
+"date": "2026-10-29",
+"title": "Fix ParsedConvergenceTable quadrature on simplex meshes",
+"commits": "Fix ParsedConvergenceTable quadrature on simplex meshes",
+"cl": "Fixed: ParsedConvergenceTable::error_from_exact() and ParsedConvergenceTable::difference() now select a quadrature matching the finite element's reference cell, allowing error computation on simplex meshes. (Luca Heltai, 2026/10/28) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20343,
+"date": "2026-11-05",
+"title": "Fix intermediate maps of rectangular Trilinos payloads",
+"commits": "Fix intermediate maps of rectangular Trilinos payloads",
+"cl": "Fixed: Trilinos linear operator payloads use the correct intermediate vector maps for sums and products, including supplied inverse actions and their transposes. Inverse actions map from an operator's range to its domain and can be supplied for rectangular operators. (Luca Heltai, 2026/11/01) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20352,
+"date": "2026-11-05",
+"title": "MGTwoLevelTransfer: fix geometric transfer for multi-component non-tensor-product elements",
+"commits": "MGTwoLevelTransfer: fix geometric transfer for multi-component non-tensor-product elements",
+"cl": "Fixed: MGTwoLevelTransfer::reinit() with geometric coarsening computed wrong prolongation, restriction, and interpolation operators for finite elements with more than one component and without tensor-product structure. (Richard Schussnig, 2026/11/02) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20359,
+"date": "2026-11-06",
+"title": "parallel::shared::Triangulation: Bugfixes: set up ghost layer correctly for periodic boundary conditions",
+"commits": "parallel::shared::Triangulation: update ghost layer in add_periodicity() | GridTools: do not try to add unconnected cells to the periodic halo layer",
+"cl": "Fixed: parallel::shared::Triangulation::add_periodicity() now reclassifies all artificial cells so that the ghost layer contains the neighbors across periodic faces. Previously, this only happened after the next refinement. (Matthias Maier, 2026/11/05) Fixed: GridTools::compute_active_cell_halo_layer() added cells at periodic boundaries to the halo layer that are not connected to the given subdomain. This could result in a deadlock with parallel::shared::Triangulation. (Matthias Maier, 2026/11/05) ",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 20361,
+"date": "2026-11-20",
+"title": "collect_periodic_faces() with single boundary id: Assert we are on a hypercube mesh",
+"commits": "collect_periodic_faces() with single boundary id: Assert we are on a hypercube mesh",
+"cl": "Fixed: The variant of GridTools::collect_periodic_faces() that takes a single boundary id accessed faces by indices that are out of range on simplex meshes. The function now throws an exception that points to the variant taking two boundary ids. (Matthias Maier, 2026/11/06) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 20362,
+"date": "2026-11-09",
+"title": "Implement FE_SimplexPoly::has_support_on_face()",
+"commits": "Implement FE_SimplexPoly::has_support_on_face()",
+"cl": "Fixed: FE_SimplexP, FE_SimplexDGP, and FE_SimplexP_Bubbles now implement FiniteElement::has_support_on_face(). Previously, the default implementation returned true for all shape functions and faces. (Matthias Maier, 2026/11/06) ",
+"newtests": 1,
+"nsrc": 2
+},
+{
+"pr": 20364,
+"date": "2026-11-17",
+"title": "Improve initial guess and robustness in `MappingFE::transform_real_to_unit_cell()`",
+"commits": "MappingFE::transform_real_to_unit_cell: improve robustness",
+"cl": "Fixed: MappingFE::transform_real_to_unit_cell() now starts the Newton iteration from the inverse of the affine map through the vertices for simplices and from the barycenter of the reference cell otherwise, instead of the origin of the reference cell, and halves the Newton step until the residual decreases. If the iteration does not converge from the affine map or converges to a point outside of the reference cell, it is restarted from the barycenter. For a point outside of the cell, the result closest to the reference cell is returned. This improves robustness for curved cells of all types. The iteration no longer needs the second derivatives of the shape functions, which are not implemente",
+"newtests": 6,
+"nsrc": 1
+},
+{
+"pr": 20369,
+"date": "2026-11-20",
+"title": "Fix CylindricalManifold::push_forward_gradient() angle derivative",
+"commits": "Fix indentation | Add test for manifold push_forward_gradient(), fixed typo in changelog | Fix CylindricalManifold::push_forward_gradient() angle derivative",
+"cl": "Fixed: CylindricalManifold::push_forward_gradient() was missing a factor of the radius in the derivative with respect to the angle. (Andreas M\u00fcsing, 2026/11/09) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20373,
+"date": "2026-11-18",
+"title": "AlignedVector::insert(): fix the computational complexity.",
+"commits": "AlignedVector::insert(): fix the computational complexity.",
+"cl": "Changed: Like for std::vector, the range passed to AlignedVector::insert() may no longer refer to elements of the vector itself. In debug mode, this is checked for ranges of the vector's value type by testing the addresses of the first and the last element of the range. Copy such a range into a separate container before inserting it. (David Wells, 2026/11/11) Fixed: AlignedVector::insert() now reuses the existing capacity and grows the allocation geometrically when it needs more memory. Previously, every call reallocated the whole array to exactly the new size, so inserting elements one at a time had quadratic complexity. (David Wells, 2026/11/10) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20389,
+"date": "2026-11-22",
+"title": "GMRES: Add Kokkos kernels for orthogonalization with device vectors",
+"commits": "Fix for older Kokkos version | Changelog | GMRES: Add Kokkos kernels for orthogonalization with device vectors",
+"cl": "Improved: SolverGMRES and SolverFGMRES now use optimized Kokkos kernels for the classical Gram-Schmidt and the delayed classical Gram-Schmidt orthogonalization with LinearAlgebra::distributed::Vector in MemorySpace::Default. The inner products against all basis vectors are computed in a single sweep with a single synchronization and MPI reduction per step, and the vector updates are fused into one sweep. (Martin Kronbichler, 2026/11/17) ",
+"newtests": 1,
+"nsrc": 3
+},
+{
+"pr": 20391,
+"date": "2026-11-20",
+"title": "Fix FEEvaluation::submit_curl() for Nedelec elements in 2d",
+"commits": "Fix FEEvaluation::submit_curl() for Nedelec elements in 2d",
+"cl": "Fixed: FEEvaluation::submit_curl() for FE_NedelecNodal in 2d now uses the curl of each cell of a cell batch. Previously, it used the curl of the first cell for all cells of the batch, so that matrix-free operators with a curl term gave wrong results. (Jordan Hoffart, 2026/11/19) ",
+"newtests": 1,
+"nsrc": 1
+},
+{
+"pr": 20393,
+"date": "2026-11-21",
+"title": "FEEvaluation: fix RT gradient after submit_value",
+"commits": "FEEvaluation: fix RT gradient after submit_value",
+"cl": "Fixed: FEEvaluation::get_gradient() for FE_RaviartThomasNodal on cells that are not parallelograms used the values on the unit cell, which FEEvaluation::submit_value() overwrites. Calling submit_value() before get_gradient() for the same quadrature point, as in a loop that submits both values and gradients, gave wrong gradients. FEEvaluation and FEFaceEvaluation now keep a copy of these values for get_gradient(). (Richard Schussnig, 2026/11/20) ",
+"newtests": 0,
+"nsrc": 1
+}
+]
