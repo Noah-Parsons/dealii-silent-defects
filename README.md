@@ -1,6 +1,6 @@
 # Defects in deal.II That No Test Caught
 
-Noah Parsons, as of 22 November 2026
+Noah Parsons, as of 22 November 2026 (revised after Professor Bangerth's comments)
 
 ## Question
 
@@ -20,29 +20,30 @@ The screening and tracing were done by an AI agent (Claude, made by Anthropic) a
 4. All 446 candidates were read. A fix was kept only if its own description says the library gave a wrong result, or silently did not do what was asked, without an error. Crashes, assertions, compile errors and performance problems were excluded.
 5. For each kept fix, how the existing tests related to it was recorded: a new test added, an existing test extended, or a stored output changed while its test did not. That last pattern means the stored output had been recording the wrong result.
 6. **`scripts/latency.py`** estimates how long the changed code had been in place, using `git blame` on the lines each fix changed (`data/latency.json`).
+7. Six cases were then traced to their origin through file moves and reformatting with `git log -S` and `-G`; the traced dates replace the estimates for those cases.
+8. **`scripts/summarise.py`** recomputes `data/stats.json` and `data/cases.csv` from `data/cases.json`.
 
 ## Results
 
-35 silent defects (`data/cases.json`, `data/cases.csv`). The full write-up is in `report/`.
+33 silent wrong results, plus 2 fixes where the results were correct but cost more work than necessary (`data/cases.json`, `data/cases.csv`; the field `kind` separates the two). The full write-up is in `report/`.
 
-| How the existing tests related | Cases |
+| How the existing tests related to the 33 wrong results | Cases |
 |---|---|
 | No existing test covered it; the fix added a new test | 15 |
-| Existing tests changed or extended to cover it | 9 |
+| Existing tests changed or extended to cover it | 8 |
 | A stored output had recorded the wrong result (test unchanged) | 5 |
-| An existing test passed both before and after the fix | 1 |
 | No test added or changed | 5 |
 
 Examples:
-- `GridGenerator::cheese()` in 3d produced no holes from 2015 until #19596. A stored output recorded 315 cells; the correct count is 291.
-- Multigrid W- and F-cycles ran as V-cycles until #19710; the existing test passed both before and after.
-- The distortion check after refinement never ran, because every call resolved to a fallback overload (#20037). It was found through a Clang warning about an unused function.
+- `GridGenerator::cheese()` in 3d produced no holes from its addition in June 2015 until #19596. A stored output recorded 315 cells; the correct count is 291.
+- The distortion check after refinement never ran, because every call resolved to a fallback overload (#20037). It was correct from 2009 until a refactoring merged in December 2020, and was found through a Clang warning about an unused function.
+- Correct results at extra cost: multigrid W- and F-cycles behaved as V-cycles from June 2017 until #19710, and the existing test passed both before and after; the PETSc solvers converged on the preconditioned residual norm from March 2004 until #19329.
 
 ## Limits
 
 - **Issue and pull request discussions were not read.** The screen relies on commit messages and changelog entries, so cases recorded only in a discussion, or fixed with a terse message and no changelog entry, are missed.
 - **How each defect was discovered** could not be determined without the discussions.
-- **The ages measure the age of the changed code**, not exactly when each defect began.
+- **Apart from six traced cases, the ages measure the age of the changed code**, not exactly when each defect began; tracing showed the estimates can be wrong in either direction.
 - **Classifying a fix as a silent wrong result is a judgement.** The descriptions are paraphrases; read the linked pull request before relying on one.
 
 ## Reproducing
@@ -56,6 +57,7 @@ python ../scripts/fetch_changes.py
 python ../scripts/cand.py
 python ../scripts/screen.py
 python ../scripts/latency.py 19596 19710 20037   # any pull request numbers
+python ../scripts/summarise.py
 node ../report/build_report.js "../report/deal.II Silent Defects Report.docx"   # needs the npm package docx
 ```
 

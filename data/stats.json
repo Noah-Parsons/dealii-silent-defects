@@ -7,23 +7,25 @@
  "test": {
   "stored_wrong": 5,
   "none": 5,
-  "passed_both": 1,
   "extended": 2,
   "new": 15,
-  "stored_changed": 7
+  "stored_changed": 6
  },
  "cause": {
   "never_worked": 3,
   "check_not_run": 1,
-  "state_overwritten": 1,
   "formula": 2,
-  "semantics": 3,
+  "semantics": 2,
   "parallel_only": 6,
   "corner_case": 14,
   "stale_state": 3,
   "scale_threshold": 2
  },
- "median_age": 5.7,
- "n_over5": 22,
- "n_aged": 33
+ "median_age": 5.5,
+ "n_over5": 19,
+ "n_aged": 30,
+ "n_cases": 35,
+ "n_wrong": 33,
+ "n_extra_cost": 2,
+ "n_traced": 6
 }
